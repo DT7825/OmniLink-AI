@@ -1608,3 +1608,322 @@ The requirements defined below establish the foundation for identity management,
 | Functional Requirement | Audit records shall include model version, recommendation timestamp, confidence score, selected ranking factors, user who accepted or rejected the recommendation, and final outcome. |
 | Expected Result | Complete recommendation history supports auditing, debugging, governance, and future model evaluation. |
 | Dependencies | AI Services, Audit Logging Service |
+## FRM-05 Communication & Collaboration
+
+### FR-083 One-to-One Messaging
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-083 |
+| Priority | Critical |
+| Module | Communication & Collaboration |
+| Title | One-to-One Messaging |
+| Description | The platform shall support secure one-to-one messaging between authorized users. |
+| Actors | Citizens, Volunteers, NGOs, Hospitals, Government Agencies |
+| Preconditions | Both users have permission to communicate. |
+| Trigger | User opens a conversation. |
+| Functional Requirement | Users shall exchange text messages securely in real time. |
+| Expected Result | Messages are delivered instantly and stored securely. |
+| Dependencies | Authentication, Messaging Service |
+
+---
+
+### FR-084 Group Conversations
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-084 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | Group Conversations |
+| Description | Users shall communicate within collaborative groups created for assistance requests or organizational teams. |
+| Functional Requirement | Groups shall support multiple participants, administrators, invitations, and membership management. |
+| Expected Result | Authorized participants collaborate through shared conversations. |
+
+---
+
+### FR-085 Request-Based Chat
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-085 |
+| Priority | Critical |
+| Module | Communication & Collaboration |
+| Title | Request-Based Chat |
+| Description | Every assistance request shall have an associated communication channel. |
+| Functional Requirement | Citizens, responders, volunteers, and organizations assigned to the request shall communicate through a dedicated discussion thread. |
+| Expected Result | Communication remains organized around individual requests. |
+
+---
+
+### FR-086 Emergency Communication
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-086 |
+| Priority | Critical |
+| Module | Communication & Collaboration |
+| Title | Emergency Communication |
+| Description | Emergency requests shall support priority communication channels. |
+| Functional Requirement | Emergency conversations shall receive higher delivery priority and immediate notification delivery. |
+| Expected Result | Critical communications experience minimal delay. |
+
+---
+
+### FR-087 Voice Calling
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-087 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | Voice Calling |
+| Description | Users shall initiate secure voice calls with authorized participants. |
+| Functional Requirement | Calls shall support call initiation, acceptance, rejection, mute, and termination. |
+| Expected Result | Real-time voice communication is available within the platform. |
+
+---
+
+### FR-088 Video Calling
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-088 |
+| Priority | Medium |
+| Module | Communication & Collaboration |
+| Title | Video Calling |
+| Description | Users shall initiate secure video calls where supported. |
+| Functional Requirement | Video sessions shall support camera controls, screen sharing, and participant management. |
+| Expected Result | Face-to-face collaboration is available when required. |
+
+---
+
+### FR-089 File Sharing
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-089 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | File Sharing |
+| Description | Users shall securely exchange files within conversations. |
+| Functional Requirement | Supported file types shall include PDF, Word, Excel, images, videos, and compressed archives subject to administrator-defined limits. |
+| Expected Result | Files remain securely associated with conversations. |
+
+---
+
+### FR-090 Image Sharing
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-090 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | Image Sharing |
+| Description | Users shall exchange photographs related to assistance requests. |
+| Functional Requirement | Uploaded images shall support preview, compression, and secure storage. |
+| Expected Result | Images improve communication and evidence collection. |
+
+---
+
+### FR-091 Document Sharing
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-091 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | Document Sharing |
+| Description | Official documents shall be exchanged securely between stakeholders. |
+| Functional Requirement | Documents shall preserve metadata, version history where applicable, and access permissions. |
+| Expected Result | Documents remain secure and traceable. |
+
+---
+
+### FR-092 Read Receipts
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-092 |
+| Priority |Medium |
+| Module | Communication & Collaboration |
+| Title | Read Receipts |
+| Description | Users shall know when messages have been delivered and viewed. |
+| Functional Requirement | Delivery and read status shall be displayed according to user privacy settings. |
+| Expected Result | Communication transparency improves. |
+
+---
+
+### FR-093 Typing Indicators
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-093 |
+| Priority | Low |
+| Module | Communication & Collaboration |
+| Title | Typing Indicators |
+| Description | Users shall see when another participant is actively composing a message. |
+| Functional Requirement | Typing indicators shall appear only while a participant is actively entering text. |
+| Expected Result | Conversations feel more responsive. |
+
+---
+
+### FR-094 Communication Notifications
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-094 |
+| Priority | Critical |
+| Module | Communication & Collaboration |
+| Title | Communication Notifications |
+| Description | Users shall receive notifications for incoming messages and calls. |
+| Functional Requirement | Notifications shall support push notifications, email, SMS (optional), and in-app alerts. |
+| Expected Result | Important communications are not missed. |
+### FR-095 Communication Search
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-095 |
+| Priority | Medium |
+| Module | Communication & Collaboration |
+| Title | Communication Search |
+| Description | Users shall search messages, conversations, participants, and shared files. |
+| Functional Requirement | Search shall support keywords, filters, dates, request IDs, and participant names. |
+| Expected Result | Users quickly locate previous communications. |
+
+---
+
+### FR-096 Conversation History
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-096 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | Conversation History |
+| Description | Communication history shall remain permanently accessible according to retention policies. |
+| Functional Requirement | Authorized users shall review complete message histories for completed requests. |
+| Expected Result | Historical communication remains available for auditing and future reference. |
+
+---
+
+### FR-097 Message Encryption
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-097 |
+| Priority | Critical |
+| Module | Communication & Collaboration |
+| Title | End-to-End Message Encryption |
+| Description | Sensitive conversations shall be protected using strong encryption mechanisms. |
+| Functional Requirement | Messages shall be encrypted during transmission and secure at rest according to platform security standards. |
+| Expected Result | Confidential communications remain protected from unauthorized access. |
+
+---
+
+### FR-098 Spam Protection
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-098 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | Spam Protection |
+| Description | The platform shall detect and prevent spam, abuse, phishing attempts, and malicious communication. |
+| Functional Requirement | Suspicious messages shall be automatically flagged for review. |
+| Expected Result | Communication quality and platform safety improve. |
+
+---
+
+### FR-099 Message Reporting
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-099 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | Report Communication |
+| Description | Users shall report abusive or inappropriate conversations. |
+| Functional Requirement | Reported conversations shall be forwarded to moderation workflows. |
+| Expected Result | Harmful communication is investigated efficiently. |
+
+---
+
+### FR-100 Communication Moderation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-100 |
+| Priority | High |
+| Module | Communication & Collaboration |
+| Title | Communication Moderation |
+| Description | Moderators shall review reported conversations and enforce platform policies. |
+| Functional Requirement | Moderators shall warn, suspend, restrict, or permanently remove offending accounts when appropriate. |
+| Expected Result | Community guidelines are consistently enforced. |
+
+---
+
+### FR-101 AI Conversation Assistant
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-101 |
+| Priority | Medium |
+| Module | Communication & Collaboration |
+| Title | AI Conversation Assistant |
+| Description | AI shall assist users by suggesting replies, translations, summaries, and communication recommendations. |
+| Functional Requirement | AI suggestions shall remain optional and require explicit user acceptance. |
+| Expected Result | Communication becomes faster and more effective. |
+
+---
+
+### FR-102 Automatic Translation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-102 |
+| Priority | Medium |
+| Module | Communication & Collaboration |
+| Title | Multilingual Translation |
+| Description | Conversations shall support automatic translation across supported languages. |
+| Functional Requirement | Users may enable or disable translation individually for each conversation. |
+| Expected Result | Language barriers are significantly reduced. |
+
+---
+
+### FR-103 Communication Analytics
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-103 |
+| Priority | Medium |
+| Module | Communication & Collaboration |
+| Title | Communication Analytics |
+| Description | Organizations shall view communication metrics related to response efficiency and collaboration. |
+| Functional Requirement | Analytics shall include response time, active conversations, engagement levels, and resolution effectiveness. |
+| Expected Result | Communication performance continuously improves. |
+
+---
+
+### FR-104 Communication Audit Logging
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-104 |
+| Priority | Critical |
+| Module | Communication & Collaboration |
+| Title | Communication Audit Logging |
+| Description | Significant communication events shall be recorded for compliance, governance, and security investigations. |
+| Functional Requirement | Audit logs shall capture timestamps, participants, actions, and system-generated events. |
+| Expected Result | Communication history remains fully traceable. |
+
+---
+
+### Communication Module Design Principles
+
+- Communication shall remain secure by default.
+- Emergency conversations shall receive highest delivery priority.
+- AI shall assist communication but never replace user intent.
+- Every communication event shall be auditable.
+- Privacy settings shall always override convenience features.
+- Communication architecture shall support horizontal scaling for millions of concurrent users.
