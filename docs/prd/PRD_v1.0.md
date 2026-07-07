@@ -932,3 +932,343 @@ The requirements defined below establish the foundation for identity management,
 | Exceptions | Logging service temporarily unavailable; events are queued until service recovery. |
 | Success Criteria | Every profile-related action is securely recorded and traceable. |
 | Dependencies | Audit Logging Service, Security Monitoring Service |
+## FRM-03 Assistance Request Management
+
+### FR-035 Create Assistance Request
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-035 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Create Assistance Request |
+| Description | The platform shall allow authenticated users to create assistance requests through a structured request creation interface. |
+| Actors | Citizen, Volunteer, NGO, Organization, Hospital, Government Agency |
+| Preconditions | User is authenticated. |
+| Trigger | User selects "Create Request". |
+| Functional Requirement | Users shall provide request title, category, description, urgency level, preferred contact method, and optional location, media, and supporting documents. |
+| Expected Result | Request is successfully stored and assigned a unique Request ID. |
+| Dependencies | User Management, Database |
+
+---
+
+### FR-036 Assistance Categories
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-036 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Assistance Categories |
+| Description | The platform shall organize requests into predefined assistance categories. |
+| Functional Requirement | Categories shall include Healthcare, Blood Donation, Education, Mentorship, Elderly Care, Child Welfare, Animal Welfare, Disaster Relief, Government Schemes, Food Support, Employment, Accessibility Support, Mental Health, and Community Services. |
+| Expected Result | Every request belongs to one primary category. |
+
+---
+
+### FR-037 AI Category Detection
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-037 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | AI Category Detection |
+| Description | AI shall automatically recommend the most appropriate category based on request content. |
+| Functional Requirement | NLP models shall analyze text, uploaded documents, and optional voice transcription to predict the request category. |
+| Expected Result | Suggested category is displayed before submission. |
+| Dependencies | AI Classification Engine |
+
+---
+
+### FR-038 Request Priority Classification
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-038 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Request Priority Classification |
+| Description | AI shall determine request urgency. |
+| Functional Requirement | Requests shall be classified as Low, Medium, High, Critical, or Emergency based on urgency, keywords, vulnerability, deadlines, and contextual information. |
+| Expected Result | Priority score is assigned automatically while allowing authorized reviewers to override when necessary. |
+
+---
+
+### FR-039 Emergency Request Submission
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-039 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Emergency Request Submission |
+| Description | Users shall be able to submit emergency assistance requests requiring immediate attention. |
+| Functional Requirement | Emergency requests shall bypass normal processing queues and immediately notify eligible responders within the configured geographic radius. |
+| Expected Result | Emergency workflow starts within seconds of successful submission. |
+
+---
+
+### FR-040 Draft Requests
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-040 |
+| Priority | Medium |
+| Module | Assistance Request Management |
+| Title | Draft Request Support |
+| Description | Users shall be able to save incomplete requests as drafts. |
+| Functional Requirement | Drafts shall remain editable until submitted or deleted. |
+| Expected Result | Drafts appear inside the user's dashboard. |
+
+---
+
+### FR-041 Request Editing
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-041 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | Edit Assistance Request |
+| Description | Users may update requests before assignment or according to platform policy. |
+| Functional Requirement | All modifications shall be versioned and recorded in audit logs. |
+| Expected Result | Updated request replaces the previous version while preserving history. |
+
+---
+
+### FR-042 Request Cancellation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-042 |
+| Priority | Medium |
+| Module | Assistance Request Management |
+| Title | Cancel Assistance Request |
+| Description | Users shall be able to cancel active requests when assistance is no longer required. |
+| Functional Requirement | Cancellation reason shall be collected before closing the request. |
+| Expected Result | Request status changes to Cancelled. |
+
+---
+
+### FR-043 Request Expiration
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-043 |
+| Priority | Medium |
+| Module | Assistance Request Management |
+| Title | Request Expiration |
+| Description | Requests shall automatically expire after configurable inactivity periods. |
+| Functional Requirement | Expired requests may be renewed by their creator if permitted. |
+| Expected Result | Expired requests are archived while remaining searchable for analytics. |
+
+---
+
+### FR-044 Duplicate Request Detection
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-044 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | Duplicate Request Detection |
+| Description | AI shall identify potentially duplicate requests before submission. |
+| Functional Requirement | Similarity shall be evaluated using request text, location, attachments, timestamps, and requester identity where appropriate. |
+| Expected Result | Users receive duplicate warnings with options to review or continue. |
+| Dependencies | AI Similarity Engine |
+
+---
+
+### FR-045 Request Timeline
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-045 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | Request Timeline |
+| Description | Every request shall maintain a chronological history of significant events. |
+| Functional Requirement | Timeline events shall include creation, updates, assignments, comments, escalations, status changes, and completion. |
+| Expected Result | Authorized users can view the complete request lifecycle. |
+
+---
+
+### FR-046 Request Status Lifecycle
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-046 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Request Status Lifecycle |
+| Description | The platform shall manage requests using standardized lifecycle states. |
+| Functional Requirement | Status values shall include Draft, Submitted, Under Review, Verified, Assigned, In Progress, Escalated, Completed, Cancelled, Rejected, and Expired. |
+| Expected Result | Every request is always associated with exactly one lifecycle state. |
+### FR-047 Intelligent Matching Engine
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-047 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Intelligent Matching Engine |
+| Description | The platform shall intelligently recommend the most suitable responders for each assistance request. |
+| Functional Requirement | AI shall evaluate request category, urgency, geographic proximity, responder expertise, availability, verification status, historical performance, language preference, and organizational capacity before generating recommendations. |
+| Expected Result | A ranked list of suitable responders is generated for every eligible request. |
+| Dependencies | AI Recommendation Engine, User Profiles |
+
+---
+
+### FR-048 Volunteer Assignment
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-048 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Volunteer Assignment |
+| Description | Volunteers shall receive assistance requests that match their registered interests and skills. |
+| Functional Requirement | Assignment recommendations shall consider volunteer availability, preferred service areas, workload, and previous participation history. |
+| Expected Result | Qualified volunteers receive assignment notifications. |
+
+---
+
+### FR-049 NGO Assignment
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-049 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | NGO Assignment |
+| Description | NGOs shall receive requests aligned with their registered mission and operational scope. |
+| Functional Requirement | Routing shall consider NGO expertise, geographic coverage, capacity, and verification level. |
+| Expected Result | Eligible NGOs receive requests suitable for their services. |
+
+---
+
+### FR-050 Hospital Routing
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-050 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Hospital Routing |
+| Description | Healthcare-related requests shall be routed to appropriate hospitals and healthcare providers. |
+| Functional Requirement | AI shall consider specialization, emergency capability, service availability, and geographic distance. |
+| Expected Result | Healthcare requests reach suitable medical institutions. |
+
+---
+
+### FR-051 Government Agency Routing
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-051 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | Government Agency Routing |
+| Description | Requests involving public services shall be forwarded to appropriate government departments. |
+| Functional Requirement | Routing shall use predefined mappings between request categories and government agencies. |
+| Expected Result | Government authorities receive relevant requests automatically. |
+
+---
+
+### FR-052 Multi-Organization Assignment
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-052 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | Multi-Organization Assignment |
+| Description | A request may be assigned to multiple organizations when collaborative support is required. |
+| Functional Requirement | Organizations shall independently accept or decline participation. |
+| Expected Result | Collaborative assistance workflows are supported. |
+
+---
+
+### FR-053 Request Escalation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-053 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Request Escalation |
+| Description | Requests shall automatically escalate if predefined response deadlines are exceeded. |
+| Functional Requirement | Escalation rules shall notify supervisors or higher-priority organizations. |
+| Expected Result | Unresolved requests continue progressing toward resolution. |
+
+---
+
+### FR-054 SLA Monitoring
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-054 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | SLA Monitoring |
+| Description | The platform shall monitor response and resolution deadlines for every request. |
+| Functional Requirement | SLA timers shall trigger reminders, warnings, and escalation workflows. |
+| Expected Result | Organizations maintain measurable response quality. |
+
+---
+
+### FR-055 Request Notifications
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-055 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | Request Notifications |
+| Description | Users shall receive notifications whenever request status changes occur. |
+| Functional Requirement | Notifications shall support mobile push, email, SMS, and in-app delivery where available. |
+| Expected Result | Stakeholders remain informed throughout the request lifecycle. |
+
+---
+
+### FR-056 Request Completion
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-056 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Request Completion |
+| Description | Authorized responders shall mark requests as completed after successful assistance. |
+| Functional Requirement | Completion shall require confirmation and optional supporting evidence. |
+| Expected Result | Completed requests move to archival workflows while remaining searchable. |
+
+---
+
+### FR-057 Feedback & Rating
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-057 |
+| Priority | High |
+| Module | Assistance Request Management |
+| Title | Feedback & Rating |
+| Description | Users shall provide feedback after request completion. |
+| Functional Requirement | Ratings shall include responder quality, communication, timeliness, and overall satisfaction. |
+| Expected Result | Feedback contributes to responder reputation scores. |
+
+---
+
+### FR-058 Request Audit Logging
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-058 |
+| Priority | Critical |
+| Module | Assistance Request Management |
+| Title | Request Audit Logging |
+| Description | Every significant request action shall be recorded in immutable audit logs. |
+| Functional Requirement | Audit records shall include timestamps, actor identity, performed action, previous value, new value, and originating device or IP where applicable. |
+| Expected Result | Complete traceability is maintained for security, compliance, and analytics. |
+| Dependencies | Audit Logging Service |
