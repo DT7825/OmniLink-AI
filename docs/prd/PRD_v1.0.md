@@ -297,3 +297,253 @@ The architecture of OmniLink AI is intentionally modular to support future enhan
 - Additional AI agents and automation workflows.
 
 Future versions will expand platform capabilities without requiring fundamental architectural redesign.
+# 8. Functional Requirements
+
+The Functional Requirements define the expected capabilities, behaviors, and services that OmniLink AI must provide to satisfy the business objectives, user needs, and stakeholder expectations defined in this Product Requirements Document.
+
+Each functional requirement represents a specific system capability and is uniquely identified to ensure complete traceability throughout product design, software architecture, implementation, testing, deployment, and future maintenance.
+
+All functional requirements included in Version 1.0 are considered part of the Minimum Viable Product (MVP) unless explicitly stated otherwise.
+
+---
+
+## Requirement Priority Levels
+
+| Priority | Description |
+|----------|-------------|
+| High | Mandatory for Version 1.0 MVP and required for successful product delivery. |
+| Medium | Important functionality that should be implemented if time permits during the MVP development cycle. |
+| Low | Planned for future releases after Version 1.0. |
+
+---
+
+## Functional Requirement Organization
+
+The functional requirements are organized into the following engineering modules:
+
+| Module ID | Module Name |
+|-----------|-------------|
+| FRM-01 | Authentication & User Management |
+| FRM-02 | Profile & Identity Management |
+| FRM-03 | Assistance Request Management |
+| FRM-04 | AI Smart Matching Engine |
+| FRM-05 | Machine Learning Prioritization |
+| FRM-06 | Community Digital Twin |
+| FRM-07 | Analytics & Dashboards |
+| FRM-08 | Notifications & Communication |
+| FRM-09 | Search & Discovery |
+| FRM-10 | Organization Management |
+| FRM-11 | Administration & Moderation |
+| FRM-12 | Security & Audit |
+| FRM-13 | External Integrations |
+
+---
+
+Each functional module contains uniquely identified requirements (FR-001, FR-002, FR-003, …) that define the expected behavior of the system. Every requirement will be mapped to stakeholder personas, product objectives, and future test cases to ensure complete engineering traceability.
+
+---
+## FRM-01 Authentication & User Management
+
+This module defines the functional requirements responsible for secure user authentication, account lifecycle management, role assignment, authorization, and access control within OmniLink AI.
+
+Authentication is the foundation of platform security and ensures that every stakeholder interacts with the system according to their assigned permissions and responsibilities.
+
+---
+### FR-001 User Registration
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-001 |
+| Priority | High |
+| Module | Authentication & User Management |
+| Title | User Registration |
+| Description | The system shall allow new users to register using role-specific registration forms. Supported roles include Citizen, Volunteer, NGO, Healthcare Provider, Mentor, Corporate CSR Representative, Government Representative, and Platform Administrator (administrator accounts are created only by authorized administrators). |
+| Actors | All public users |
+| Preconditions | User is not already registered. |
+| Postconditions | A new user account is created in a pending verification or active state according to platform verification rules. |
+| Acceptance Criteria | Registration data is validated, duplicate accounts are prevented, passwords are securely stored, and the appropriate user role is assigned. |
+| Related Objectives | OBJ-001, OBJ-002, OBJ-004 |
+| Related Personas | PER-001, PER-002, PER-003, PER-004, PER-005, PER-006 |
+### FR-002 Secure User Login
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-002 |
+| Priority | High |
+| Module | Authentication & User Management |
+| Title | Secure User Login |
+| Description | The system shall authenticate registered users using secure credentials and establish authenticated sessions according to their assigned roles and permissions. |
+| Actors | Registered Users |
+| Preconditions | User account exists and is active. |
+| Postconditions | User successfully accesses the platform dashboard corresponding to their role. |
+| Acceptance Criteria | Invalid credentials are rejected, authenticated sessions are securely created, and role-based access permissions are enforced. |
+| Related Objectives | OBJ-001, OBJ-004 |
+| Related Personas | All Personas |
+### FR-003 Password Recovery
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-003 |
+| Priority | High |
+| Module | Authentication & User Management |
+| Title | Password Recovery |
+| Description | The system shall allow registered users to securely reset forgotten passwords through a verified password recovery process. |
+| Actors | Registered Users |
+| Preconditions | User account exists. |
+| Postconditions | Password is securely updated after successful identity verification. |
+| Acceptance Criteria | Password reset links expire after a configurable duration and cannot be reused. |
+| Related Objectives | OBJ-004 |
+| Related Personas | All Personas |
+### FR-004 Email Verification
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-004 |
+| Priority | High |
+| Module | Authentication & User Management |
+| Title | Email Verification |
+| Description | The platform shall verify every registered email address before activating user accounts. |
+| Actors | User, Authentication Service |
+| Preconditions | User has completed registration. |
+| Trigger | User submits registration form. |
+| Main Flow | 1. System generates verification token.<br>2. Verification email is sent.<br>3. User clicks verification link.<br>4. System validates token.<br>5. Account status becomes Verified. |
+| Alternative Flow | User requests a new verification email if the previous token expires. |
+| Exceptions | Invalid or expired verification token. |
+| Success Criteria | Verified users gain access to platform services. |
+| Dependencies | Email Service |
+### FR-005 Phone Number Verification
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-005 |
+| Priority | Medium |
+| Module | Authentication & User Management |
+| Title | Phone Number Verification |
+| Description | The platform shall verify mobile numbers using One-Time Passwords (OTP) before enabling sensitive features. |
+| Actors | User, Authentication Service |
+| Preconditions | User provides a valid mobile number. |
+| Trigger | User requests phone verification. |
+| Main Flow | 1. System generates OTP.<br>2. OTP sent via SMS.<br>3. User enters OTP.<br>4. System validates OTP.<br>5. Phone number becomes verified. |
+| Alternative Flow | User requests OTP resend after timeout. |
+| Exceptions | Invalid OTP, expired OTP, excessive verification attempts. |
+| Success Criteria | Verified phone number is linked to the account. |
+| Dependencies | SMS Gateway |
+### FR-006 Profile Management
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-006 |
+| Priority | High |
+| Module | Authentication & User Management |
+| Title | Profile Management |
+| Description | Users shall be able to create, edit, and manage their personal profiles, preferences, and verification status. |
+| Actors | Registered User |
+| Preconditions | User is authenticated. |
+| Trigger | User opens Profile Settings. |
+| Main Flow | 1. Display profile.<br>2. User edits information.<br>3. System validates data.<br>4. Updated profile is saved. |
+| Alternative Flow | User cancels modifications before saving. |
+| Exceptions | Invalid input, duplicate contact information. |
+| Success Criteria | Profile updates are successfully stored. |
+| Dependencies | User Database |
+### FR-007 Role-Based Access Control (RBAC)
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-007 |
+| Priority | Critical |
+| Module | Authentication & User Management |
+| Title | Role-Based Access Control |
+| Description | The platform shall restrict access to features and data based on predefined user roles and permissions. |
+| Actors | User, Administrator, Authorization Service |
+| Preconditions | User has successfully authenticated. |
+| Trigger | User attempts to access a protected resource. |
+| Main Flow | 1. User requests access.<br>2. System retrieves assigned role.<br>3. Permissions are evaluated.<br>4. Access is granted or denied based on authorization rules. |
+| Alternative Flow | Administrator updates user roles or permissions. |
+| Exceptions | Unauthorized access attempt, invalid role assignment. |
+| Success Criteria | Users can only access resources permitted by their assigned roles. |
+| Dependencies | Authentication Service, User Database |
+### FR-008 User Session Management
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-008 |
+| Priority | High |
+| Module | Authentication & User Management |
+| Title | User Session Management |
+| Description | The platform shall securely create, maintain, refresh, and terminate authenticated user sessions. |
+| Actors | User, Authentication Service |
+| Preconditions | User has successfully logged in. |
+| Trigger | Successful authentication. |
+| Main Flow | 1. Create secure session.<br>2. Assign session token.<br>3. Monitor activity.<br>4. Refresh session before expiry if applicable.<br>5. Automatically expire inactive sessions. |
+| Alternative Flow | User chooses "Remember Me" to extend session duration within configured security limits. |
+| Exceptions | Invalid session token, expired session, concurrent session policy violation. |
+| Success Criteria | Only valid sessions are allowed to access protected resources. |
+| Dependencies | Authentication Service |
+### FR-009 Logout
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-009 |
+| Priority | High |
+| Module | Authentication & User Management |
+| Title | Secure Logout |
+| Description | Users shall be able to securely terminate their active sessions from one or all devices. |
+| Actors | User |
+| Preconditions | User is authenticated. |
+| Trigger | User selects Logout. |
+| Main Flow | 1. User requests logout.<br>2. Session token is invalidated.<br>3. Active session is terminated.<br>4. User is redirected to the login page. |
+| Alternative Flow | User selects "Logout from All Devices" to invalidate every active session. |
+| Exceptions | Session already expired. |
+| Success Criteria | User can no longer access protected resources without re-authentication. |
+| Dependencies | Session Management Service |
+### FR-010 Account Deactivation
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-010 |
+| Priority | Medium |
+| Module | Authentication & User Management |
+| Title | Account Deactivation |
+| Description | Users shall be able to temporarily deactivate their accounts without permanently deleting their personal data. |
+| Actors | Registered User |
+| Preconditions | User is authenticated. |
+| Trigger | User selects "Deactivate Account" from Account Settings. |
+| Main Flow | 1. User initiates deactivation.<br>2. System requests confirmation.<br>3. Account status changes to Deactivated.<br>4. Login access is disabled until reactivation. |
+| Alternative Flow | Administrator may deactivate accounts that violate platform policies. |
+| Exceptions | Active legal or administrative restrictions preventing deactivation. |
+| Success Criteria | User account becomes inactive while preserving profile data. |
+| Dependencies | User Database |
+### FR-011 Account Reactivation
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-011 |
+| Priority | Medium |
+| Module | Authentication & User Management |
+| Title | Account Reactivation |
+| Description | Previously deactivated users shall be able to restore their accounts after successful identity verification. |
+| Actors | Registered User |
+| Preconditions | Account status is Deactivated. |
+| Trigger | User requests account reactivation. |
+| Main Flow | 1. User verifies identity.<br>2. System validates credentials.<br>3. Account status changes to Active.<br>4. Previous profile and settings become available. |
+| Alternative Flow | Administrator manually restores the account when required. |
+| Exceptions | Identity verification failure, permanently suspended account. |
+| Success Criteria | User regains full platform access with previous data intact. |
+| Dependencies | Authentication Service, User Database |
+### FR-012 Authentication Audit Logging
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-012 |
+| Priority | Critical |
+| Module | Authentication & User Management |
+| Title | Authentication Audit Logging |
+| Description | The platform shall securely record authentication-related activities for security monitoring, compliance, and forensic investigations. |
+| Actors | Authentication Service, Security Administrator |
+| Preconditions | Authentication event occurs. |
+| Trigger | Login, logout, password reset, account creation, account deactivation, failed login attempt, role modification, or session termination. |
+| Main Flow | 1. Authentication event occurs.<br>2. System records timestamp, user ID, IP address, device information, action performed, and outcome.<br>3. Audit logs are securely stored.<br>4. Authorized administrators may review logs. |
+| Alternative Flow | Security monitoring systems automatically analyze logs for suspicious behavior. |
+| Exceptions | Logging service temporarily unavailable; events are queued for later storage. |
+| Success Criteria | Every security-critical authentication event is recorded and traceable. |
+| Dependencies | Authentication Service, Logging Service, Security Monitoring System |
