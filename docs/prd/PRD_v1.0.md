@@ -2308,3 +2308,549 @@ The module enables secure onboarding, identity verification, administrative mana
 - Platform architecture shall support organizations ranging from small NGOs to nationwide government agencies.
 - Organizational analytics shall prioritize measurable social impact alongside operational efficiency.
 - Future organizational categories shall integrate without requiring architectural redesign.
+# FRM-07 Volunteer Management
+
+## Module Overview
+
+The Volunteer Management module enables individuals to register as verified volunteers and participate in social initiatives coordinated through OmniLink AI. It provides comprehensive functionality for volunteer onboarding, verification, skill profiling, availability management, assignment coordination, performance monitoring, recognition, and long-term engagement.
+
+The module is designed to support both routine community assistance and large-scale emergency response scenarios while ensuring volunteer safety, accountability, transparency, and efficient utilization of human resources.
+
+---
+
+## Business Purpose
+
+Volunteers are among the most valuable resources within the OmniLink AI ecosystem. Effective volunteer management ensures that assistance requests are fulfilled by appropriately qualified, verified, and available individuals while maximizing social impact.
+
+This module aims to:
+
+- Build a trusted volunteer ecosystem.
+- Improve response times for assistance requests.
+- Match volunteers according to skills, certifications, location, and availability.
+- Maintain volunteer safety throughout every assignment.
+- Increase long-term volunteer retention.
+- Provide measurable impact analytics for volunteers and organizations.
+- Support nationwide emergency mobilization when required.
+
+---
+
+### FR-131 Volunteer Registration
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-131 |
+| Priority | Critical |
+| Module | Volunteer Management |
+| Title | Volunteer Registration |
+| Description | Individuals shall be able to register as volunteers through a structured onboarding workflow. |
+| Functional Requirement | Registration shall collect personal information, contact details, emergency contact, preferred volunteering categories, languages, location, availability, and supporting verification documents. |
+| Expected Result | Volunteers successfully submit applications for verification. |
+
+---
+
+### FR-132 Volunteer Profile
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-132 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Profile |
+| Description | Every volunteer shall maintain a comprehensive volunteer profile. |
+| Functional Requirement | Profiles shall include skills, certifications, languages, interests, education, work experience, volunteering history, availability preferences, and verification status. |
+| Expected Result | The platform maintains accurate volunteer information for intelligent matching. |
+
+---
+
+### FR-133 Volunteer Verification
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-133 |
+| Priority | Critical |
+| Module | Volunteer Management |
+| Title | Volunteer Verification |
+| Description | Volunteers shall complete identity verification before participating in platform activities requiring verified volunteers. |
+| Functional Requirement | Verification may include identity validation, document review, contact verification, and additional background verification where applicable. |
+| Expected Result | Only verified volunteers participate in sensitive assistance activities. |
+
+---
+
+### FR-134 Background Verification
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-134 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Background Verification |
+| Description | Certain volunteer categories shall require enhanced background verification. |
+| Functional Requirement | Enhanced verification may include criminal record verification where legally permissible, organizational references, certification validation, and additional screening defined by platform policies. |
+| Expected Result | High-risk assistance activities involve appropriately screened volunteers. |
+
+---
+
+### FR-135 Volunteer Categories
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-135 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Categories |
+| Description | Volunteers shall identify one or more areas in which they are willing and qualified to contribute. |
+| Functional Requirement | Categories include healthcare, blood donation, disaster response, education, mentoring, elderly care, animal welfare, logistics, environmental initiatives, community outreach, technical support, and future platform services. |
+| Expected Result | Volunteers are matched according to relevant expertise and interests. |
+
+---
+
+### FR-136 Skill Profile Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-136 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Skill Profile |
+| Description | Volunteers shall maintain structured skill profiles. |
+| Functional Requirement | Skills may include technical, medical, educational, language, counseling, logistics, emergency response, animal care, administration, leadership, and additional verified competencies. |
+| Expected Result | AI recommendations utilize accurate skill information during assignment selection. |
+
+---
+
+### FR-137 Certification Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-137 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Certification Management |
+| Description | Volunteers shall upload and maintain professional certifications relevant to volunteering activities. |
+| Functional Requirement | Certifications shall support expiration tracking, verification status, issuing organization, renewal reminders, and document storage. |
+| Expected Result | Only appropriately certified volunteers receive specialized assignments. |
+
+---
+
+### FR-138 Availability Scheduling
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-138 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Availability Scheduling |
+| Description | Volunteers shall define their availability for assignments. |
+| Functional Requirement | Availability shall support recurring schedules, temporary availability, emergency availability, vacation periods, preferred working hours, and blackout dates. |
+| Expected Result | Assignment matching considers real-time volunteer availability. |
+
+---
+
+### FR-139 Geographic Preferences
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-139 |
+| Priority | Medium |
+| Module | Volunteer Management |
+| Title | Geographic Preferences |
+| Description | Volunteers shall define geographical regions where they are willing to serve. |
+| Functional Requirement | Geographic preferences shall support radius-based selection, city, district, state, national, remote-only, and international volunteering options where applicable. |
+| Expected Result | Volunteers receive assignments aligned with their preferred service areas. |
+
+---
+
+### FR-140 Volunteer Status Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-140 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Status |
+| Description | The platform shall maintain current operational status for every volunteer. |
+| Functional Requirement | Status values include Pending Verification, Verified, Available, Assigned, Busy, Offline, Suspended, Retired, and Emergency Available. |
+| Expected Result | Organizations receive accurate volunteer availability information.
+### FR-141 Volunteer Assignment
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-141 |
+| Priority | Critical |
+| Module | Volunteer Management |
+| Title | Volunteer Assignment |
+| Description | The platform shall assign volunteers to assistance requests through AI-assisted or manual assignment workflows. |
+| Functional Requirement | Assignment decisions shall consider volunteer skills, availability, certifications, geographic proximity, trust score, workload, language preferences, and organizational policies. |
+| Expected Result | Suitable volunteers receive assignment notifications for eligible requests. |
+
+---
+
+### FR-142 Assignment Acceptance
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-142 |
+| Priority | Critical |
+| Module | Volunteer Management |
+| Title | Assignment Acceptance |
+| Description | Volunteers shall accept or decline assignment requests within a configurable response window. |
+| Functional Requirement | Accepted assignments become active while declined assignments are automatically reassigned through AI or organizational workflows. |
+| Expected Result | Assignment lifecycle progresses without unnecessary delays. |
+
+---
+
+### FR-143 Assignment Status Tracking
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-143 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Assignment Status Tracking |
+| Description | Every volunteer assignment shall maintain a structured lifecycle. |
+| Functional Requirement | Status values include Pending, Accepted, In Progress, On Hold, Completed, Cancelled, Escalated, and Expired. |
+| Expected Result | Organizations and volunteers always know the current assignment status. |
+
+---
+
+### FR-144 Shift Scheduling
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-144 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Shift Scheduling |
+| Description | Organizations shall schedule volunteer shifts for recurring or planned activities. |
+| Functional Requirement | Shift scheduling shall support recurring schedules, emergency shifts, replacements, overtime, and attendance tracking. |
+| Expected Result | Volunteer availability aligns with organizational operational needs. |
+
+---
+
+### FR-145 Check-In & Check-Out
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-145 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Check-In & Check-Out |
+| Description | Volunteers shall record the start and completion of assignments through secure check-in and check-out workflows. |
+| Functional Requirement | Check-in methods may include GPS verification, QR codes, organization approval, or manual confirmation depending on assignment type. |
+| Expected Result | Volunteer participation is accurately recorded. |
+
+---
+
+### FR-146 Live Location Sharing
+
+| Field | Description |
+|---------|-------------|
+|Requirement ID | FR-146 |
+| Priority | Medium |
+| Module | Volunteer Management |
+| Title | Live Location Sharing |
+| Description | Volunteers participating in emergency or field operations may securely share real-time location with authorized stakeholders. |
+| Functional Requirement | Location sharing shall be optional except where organizational policies require it for responder safety. |
+| Expected Result | Coordinators monitor volunteer safety during active operations. |
+
+---
+
+### FR-147 Emergency Volunteer Mobilization
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-147 |
+| Priority | Critical |
+| Module | Volunteer Management |
+| Title | Emergency Volunteer Mobilization |
+| Description | The platform shall rapidly notify eligible volunteers during emergency situations. |
+| Functional Requirement | Emergency mobilization shall prioritize volunteers based on proximity, availability, expertise, certifications, and previous emergency participation. |
+| Expected Result | Emergency response teams are assembled with minimal delay. |
+
+---
+
+### FR-148 Volunteer Safety Acknowledgement
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-148 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Safety Acknowledgement |
+| Description | Volunteers shall acknowledge safety guidelines before beginning assignments classified as medium or high risk. |
+| Functional Requirement | Safety instructions shall be presented according to assignment type and organizational requirements. |
+| Expected Result | Volunteers confirm awareness of safety responsibilities before deployment. |
+
+---
+
+### FR-149 Assignment Escalation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-149 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Assignment Escalation |
+| Description | Volunteer assignments shall automatically escalate when predefined response or completion thresholds are exceeded. |
+| Functional Requirement | Escalation workflows shall notify supervisors and trigger reassignment where appropriate. |
+| Expected Result | Unresolved assignments continue progressing toward completion. |
+
+---
+
+### FR-150 Assignment Completion
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-150 |
+| Priority | Critical |
+| Module | Volunteer Management |
+| Title | Assignment Completion |
+| Description | Volunteers shall mark assignments as completed after successfully delivering assistance. |
+| Functional Requirement | Completion records may include notes, photographs, supporting documents, beneficiary confirmation, and organization approval where applicable. |
+| Expected Result | Completed assignments become available for reporting, analytics, and performance evaluation. |
+### FR-151 Volunteer Performance Evaluation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-151 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Performance Evaluation |
+| Description | The platform shall evaluate volunteer performance using objective and measurable indicators. |
+| Functional Requirement | Performance evaluation shall consider completed assignments, punctuality, response time, beneficiary feedback, organization ratings, communication quality, attendance, and policy compliance. |
+| Expected Result | Volunteer performance is continuously measured and available for reporting and AI-assisted assignment decisions. |
+
+---
+
+### FR-152 Volunteer Rating System
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-152 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Rating System |
+| Description | Organizations and beneficiaries shall provide ratings after assignment completion. |
+| Functional Requirement | Ratings shall include professionalism, communication, timeliness, effectiveness, empathy, and overall satisfaction. |
+| Expected Result | Volunteer reputation reflects verified operational performance. |
+
+---
+
+### FR-153 Volunteer Recognition
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-153 |
+| Priority | Medium |
+| Module | Volunteer Management |
+| Title | Volunteer Recognition |
+| Description | The platform shall recognize volunteer contributions through digital achievements and public recognition where permitted. |
+| Functional Requirement | Recognition mechanisms may include certificates, appreciation badges, milestone awards, featured volunteer programs, and annual recognition events. |
+| Expected Result | Volunteer motivation and long-term engagement increase. |
+
+---
+
+### FR-154 Volunteer Rewards
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-154 |
+| Priority | Medium |
+| Module | Volunteer Management |
+| Title | Volunteer Rewards |
+| Description | Organizations may provide rewards to eligible volunteers according to organizational policies. |
+| Functional Requirement | Rewards may include certificates, recommendation letters, internship credits, community service hours, vouchers, scholarships, and partner-sponsored incentives. |
+| Expected Result | Reward programs encourage sustained volunteer participation. |
+
+---
+
+### FR-155 Volunteer Training Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-155 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Training |
+| Description | Organizations shall provide structured training programs for volunteers. |
+| Functional Requirement | Training may include online learning, in-person workshops, assessments, certification courses, emergency preparedness, and organization-specific onboarding. |
+| Expected Result | Volunteers remain qualified for assigned responsibilities. |
+
+---
+
+### FR-156 Certification Renewal
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-156 |
+| Priority | Medium |
+| Module | Volunteer Management |
+| Title | Certification Renewal |
+| Description | The platform shall monitor volunteer certification validity and notify volunteers before expiration. |
+| Functional Requirement | Renewal reminders shall be generated according to configurable schedules, and expired certifications shall affect eligibility for specialized assignments. |
+| Expected Result | Volunteers maintain valid qualifications for regulated activities. |
+
+---
+
+### FR-157 Volunteer Analytics
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-157 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Analytics |
+| Description | Organizations shall access analytical dashboards describing volunteer participation and operational effectiveness. |
+| Functional Requirement | Analytics shall include assignment completion rates, volunteer retention, average response time, participation trends, skill distribution, workload analysis, and geographic coverage. |
+| Expected Result | Organizations make informed volunteer management decisions. |
+
+---
+
+### FR-158 Volunteer Impact Measurement
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-158 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Impact Measurement |
+| Description | The platform shall quantify the measurable social impact created by volunteer activities. |
+| Functional Requirement | Metrics may include beneficiaries assisted, volunteer hours contributed, requests completed, emergency responses supported, community initiatives completed, and estimated social value generated. |
+| Expected Result | Volunteer contributions become measurable and transparent. |
+
+---
+
+### FR-159 Volunteer Retention Monitoring
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-159 |
+| Priority | Medium |
+| Module | Volunteer Management |
+| Title | Volunteer Retention Monitoring |
+| Description | The platform shall monitor long-term volunteer engagement and identify volunteers at risk of becoming inactive. |
+| Functional Requirement | AI may analyze participation frequency, declining activity, assignment acceptance trends, and engagement history to recommend retention initiatives. |
+| Expected Result | Organizations proactively improve volunteer retention. |
+
+---
+
+### FR-160 AI Volunteer Insights
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-160 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | AI Volunteer Insights |
+| Description | AI shall generate insights that improve volunteer management and operational efficiency. |
+| Functional Requirement | Insights may include workload balancing, skill shortages, training recommendations, retention opportunities, assignment optimization, and future volunteer demand forecasting. |
+| Expected Result | Organizations receive actionable AI-supported recommendations for volunteer program improvement. |
+---
+
+## Business Rules
+
+### BR-VM-001 Volunteer Eligibility
+Only registered users who satisfy the minimum onboarding requirements may register as volunteers.
+
+### BR-VM-002 Verification Requirement
+Assignments classified as Medium, High, Critical, or Emergency shall only be assigned to volunteers satisfying the required verification level.
+
+### BR-VM-003 Certification Requirement
+Assignments requiring specialized expertise shall only be assigned to volunteers possessing valid and verified certifications.
+
+### BR-VM-004 Availability Enforcement
+Volunteers shall only receive assignment recommendations while marked as Available or Emergency Available.
+
+### BR-VM-005 Safety Compliance
+Volunteers shall acknowledge mandatory safety guidance before participating in assignments requiring additional precautions.
+
+### BR-VM-006 Assignment Acceptance Window
+Organizations shall configure response deadlines after which unaccepted assignments may be automatically reassigned.
+
+---
+
+## Security Considerations
+
+### FR-161 Volunteer Data Protection
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-161 |
+| Priority | Critical |
+| Module | Volunteer Management |
+| Title | Volunteer Data Protection |
+| Description | Volunteer personal information shall be protected according to platform security policies and applicable regulations. |
+| Functional Requirement | Personally identifiable information shall be accessible only to authorized users and protected through secure storage, encrypted transmission, and role-based access control. |
+| Expected Result | Volunteer privacy is preserved throughout the platform lifecycle. |
+
+---
+
+### FR-162 Volunteer Incident Reporting
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-162 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Incident Reporting |
+| Description | Volunteers and organizations shall report incidents occurring during assignments. |
+| Functional Requirement | Incident reports shall capture assignment information, participants, timestamps, descriptions, supporting evidence, severity, and follow-up actions. |
+| Expected Result | Safety incidents are documented, investigated, and resolved appropriately. |
+
+---
+
+### FR-163 Volunteer Suspension Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-163 |
+| Priority | High |
+| Module | Volunteer Management |
+| Title | Volunteer Suspension |
+| Description | Platform administrators and authorized organizations shall suspend volunteer participation when policy violations or safety concerns are identified. |
+| Functional Requirement | Suspension workflows shall preserve assignment history while restricting future assignment eligibility until reinstatement. |
+| Expected Result | Platform integrity and participant safety remain protected. |
+
+---
+
+### FR-164 Volunteer Audit Logging
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-164 |
+| Priority | Critical |
+| Module | Volunteer Management |
+| Title | Volunteer Audit Logging |
+| Description | Significant volunteer lifecycle events shall be permanently recorded for security, governance, and compliance purposes. |
+| Functional Requirement | Audit logs shall record registrations, verification events, assignment actions, certifications, profile modifications, suspensions, reinstatements, safety incidents, and administrative actions. |
+| Expected Result | Complete volunteer lifecycle traceability is maintained. |
+
+---
+
+## Future Expansion Strategy
+
+The Volunteer Management architecture shall support future enhancements including:
+
+- AI volunteer mentoring
+- Gamification and achievement systems
+- Cross-organization volunteer portability
+- International volunteer programs
+- Disaster reserve volunteer networks
+- Corporate volunteering initiatives
+- University volunteer partnerships
+- Community leadership programs
+- Offline-first volunteer mobile applications
+- Integration with national volunteer registries where supported
+
+---
+
+## Module Design Principles
+
+- Volunteer safety shall always take precedence over operational efficiency.
+- Human oversight shall remain available for all critical volunteer decisions.
+- AI shall assist assignment decisions while maintaining transparency and explainability.
+- Volunteer recognition shall reward meaningful community impact rather than activity volume alone.
+- Assignment workflows shall remain fair, unbiased, and auditable.
+- Privacy shall be respected throughout volunteer onboarding and operations.
+- Platform architecture shall support millions of volunteers without requiring major architectural redesign.
+- Volunteer management shall remain extensible to support future humanitarian initiatives.
