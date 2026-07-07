@@ -57,3 +57,10 @@ OmniLink AI is designed not only as a hackathon project but also as the foundati
 17. Future Roadmap
 
 ---
+## 1. Vision Statement
+
+To become the world's most trusted AI-powered social coordination platform that enables every individual, community, organization, and government institution to collaborate seamlessly in delivering timely, transparent, and impactful social support.
+
+OmniLink AI envisions a future where access to help is never limited by a lack of awareness, fragmented services, or poor coordination. By intelligently connecting people, organizations, resources, and public services through responsible Artificial Intelligence, the platform aims to transform isolated social initiatives into one connected ecosystem capable of maximizing collective impact.
+
+Our long-term vision is to establish OmniLink AI as the digital infrastructure for social coordination, empowering communities across local, national, and global levels to respond faster, allocate resources more effectively, and improve the quality of life for millions of people.
