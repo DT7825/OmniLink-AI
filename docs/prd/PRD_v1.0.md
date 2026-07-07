@@ -85,7 +85,7 @@ As a result, response times increase, resources remain underutilized, duplicate 
 Although Artificial Intelligence has transformed industries such as finance, healthcare, logistics, and commerce, its potential to improve large-scale social coordination remains significantly underutilized. There is a need for a platform that not only connects people with available resources but also understands urgency, context, trust, proximity, organizational capacity, and historical outcomes to recommend the most appropriate response.
 
 OmniLink AI addresses this challenge by providing a secure, AI-powered social coordination platform that intelligently connects individuals, volunteers, NGOs, healthcare providers, educational institutions, corporations, and government agencies within a unified digital ecosystem. Through intelligent matching, explainable recommendations, predictive prioritization, and responsible AI-assisted decision support, the platform aims to improve collaboration, accelerate response times, optimize resource allocation, and maximize measurable social impact.
-## 4. Product Objectives
+## 4. Product Objectives 
 
 The primary objective of OmniLink AI is to build a secure, scalable, AI-powered social coordination platform that intelligently connects people, organizations, and public services to deliver timely, transparent, and impactful assistance. The following objectives define the measurable outcomes that guide the design, development, and evaluation of the platform.
 
@@ -102,3 +102,24 @@ The primary objective of OmniLink AI is to build a secure, scalable, AI-powered 
 ### Objective Alignment
 
 Every feature, AI model, Machine Learning component, API, database entity, dashboard, and user workflow within OmniLink AI must directly contribute to one or more of the objectives defined above. Features that do not support these objectives will not be included in Version 1.0 of the product.
+## 5. Stakeholders
+
+OmniLink AI serves a diverse ecosystem of stakeholders, each playing a unique role in creating an efficient, transparent, and collaborative social support network. Every stakeholder interacts with the platform through role-based permissions and contributes to the overall objective of improving community coordination.
+
+| Stakeholder | Description | Primary Responsibilities | Platform Benefits |
+|-------------|-------------|--------------------------|-------------------|
+| Individuals Seeking Assistance | Citizens requesting support such as mentorship, healthcare guidance, blood donation, elderly assistance, animal rescue, disaster relief, or government welfare information. | Submit requests, track progress, communicate with responders, provide feedback. | Faster access to verified and appropriate assistance. |
+| Volunteers | Individuals willing to contribute time, skills, or resources to support community initiatives. | Accept requests, provide assistance, update task status, verify completion. | Easy discovery of meaningful volunteering opportunities. |
+| Non-Governmental Organizations (NGOs) | Registered organizations providing social services and community programs. | Manage cases, coordinate volunteers, allocate resources, publish services, monitor impact. | Better coordination, increased visibility, improved operational efficiency. |
+| Healthcare Providers | Hospitals, clinics, doctors, and healthcare professionals participating in social assistance programs. | Respond to healthcare-related requests, provide medical guidance, coordinate emergency support. | Improved patient outreach and coordinated healthcare delivery. |
+| Educational Institutions & Mentors | Schools, colleges, universities, training organizations, and verified mentors supporting education and career development. | Provide mentorship, guidance, educational opportunities, and skill development. | Efficient mentor-mentee matching and wider social impact. |
+| Government Agencies | Government departments and public welfare authorities responsible for delivering citizen services and schemes. | Publish welfare schemes, monitor community trends, analyze reports, coordinate large-scale responses. | Better policy insights and improved public service delivery. |
+| Corporate CSR Partners | Organizations contributing through Corporate Social Responsibility (CSR) initiatives. | Sponsor community programs, contribute resources, monitor CSR impact. | Transparent impact measurement and efficient resource utilization. |
+| Platform Administrators | Authorized personnel responsible for operating, securing, and maintaining the platform. | User verification, moderation, security monitoring, analytics, platform configuration. | Complete operational visibility and governance. |
+
+### Stakeholder Principles
+
+- Every stakeholder is authenticated and assigned role-based permissions.
+- AI recommendations assist stakeholders but never replace human decision-making in critical situations.
+- Trust, transparency, privacy, and accountability are fundamental principles governing all stakeholder interactions.
+- Collaboration between stakeholders is prioritized over isolated workflows to maximize measurable social impact.
