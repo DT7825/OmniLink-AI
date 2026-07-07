@@ -64,3 +64,13 @@ To become the world's most trusted AI-powered social coordination platform that 
 OmniLink AI envisions a future where access to help is never limited by a lack of awareness, fragmented services, or poor coordination. By intelligently connecting people, organizations, resources, and public services through responsible Artificial Intelligence, the platform aims to transform isolated social initiatives into one connected ecosystem capable of maximizing collective impact.
 
 Our long-term vision is to establish OmniLink AI as the digital infrastructure for social coordination, empowering communities across local, national, and global levels to respond faster, allocate resources more effectively, and improve the quality of life for millions of people.
+
+## 2. Mission Statement
+
+Our mission is to build a secure, intelligent, and inclusive AI-powered social coordination platform that enables individuals, volunteers, non-governmental organizations (NGOs), healthcare providers, educational institutions, corporations, and government agencies to collaborate through a single unified ecosystem.
+
+OmniLink AI seeks to eliminate fragmented access to social services by providing intelligent resource discovery, verified stakeholder matching, explainable AI recommendations, real-time coordination, and data-driven prioritization of community needs.
+
+The platform is designed to empower communities with responsible Artificial Intelligence, Machine Learning, and Retrieval-Augmented Generation (RAG) while ensuring that critical decisions remain transparent, ethical, and under meaningful human oversight.
+
+By reducing response times, improving resource utilization, strengthening collaboration between organizations, and making social support more accessible, OmniLink AI aims to create measurable and sustainable social impact at local, regional, national, and global levels.
