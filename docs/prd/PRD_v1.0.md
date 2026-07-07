@@ -1927,3 +1927,384 @@ The requirements defined below establish the foundation for identity management,
 - Every communication event shall be auditable.
 - Privacy settings shall always override convenience features.
 - Communication architecture shall support horizontal scaling for millions of concurrent users.
+## FRM-06 Organization & NGO Management
+
+This module defines the complete lifecycle management of organizations participating in the OmniLink AI ecosystem. Organizations include NGOs, hospitals, educational institutions, blood banks, animal shelters, government agencies, CSR departments, volunteer organizations, and future verified service providers.
+
+The module enables secure onboarding, identity verification, administrative management, branch operations, resource management, organization dashboards, analytics, compliance monitoring, and collaboration with individuals and other organizations.
+
+---
+
+### FR-105 Organization Registration
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-105 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Organization Registration |
+| Description | Organizations shall be able to register on the platform using structured registration forms. |
+| Functional Requirement | Registration shall capture organization type, legal name, registration number, contact information, address, operating regions, representative details, and supporting documents. |
+| Expected Result | Organizations successfully submit onboarding requests for verification. |
+
+---
+
+### FR-106 Organization Type Selection
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-106 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Organization Classification |
+| Description | Organizations shall classify themselves according to predefined categories. |
+| Functional Requirement | Supported categories shall include NGOs, Hospitals, Clinics, Educational Institutions, Blood Banks, Animal Shelters, Government Departments, Disaster Response Agencies, CSR Organizations, Volunteer Networks, and future organization types. |
+| Expected Result | Organizations receive workflows appropriate to their operational category. |
+
+---
+
+### FR-107 Legal Document Submission
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-107 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Legal Document Submission |
+| Description | Organizations shall upload legal documentation required for verification. |
+| Functional Requirement | Supported documents include registration certificates, government licenses, tax documents, accreditation certificates, identity proof of authorized representatives, and additional compliance documents. |
+| Expected Result | Verification teams receive complete documentation for review. |
+
+---
+
+### FR-108 Organization Verification Workflow
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-108 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Organization Verification |
+| Description | Every organization shall pass a structured verification workflow before gaining operational access. |
+| Functional Requirement | Verification shall include document validation, representative verification, manual review, automated fraud detection, and approval by platform administrators where required. |
+| Expected Result | Only verified organizations gain access to platform services. |
+
+---
+
+### FR-109 Verification Status Tracking
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-109 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Verification Status |
+| Description | Organizations shall track verification progress in real time. |
+| Functional Requirement | Status values include Submitted, Under Review, Additional Information Required, Approved, Rejected, Suspended, and Expired. |
+| Expected Result | Organizations remain informed throughout the verification process. |
+
+---
+
+### FR-110 Organization Dashboard
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-110 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Organization Dashboard |
+| Description | Every verified organization shall receive a dedicated management dashboard. |
+| Functional Requirement | Dashboards shall summarize assistance requests, volunteers, resources, active collaborations, response metrics, pending approvals, analytics, and AI insights. |
+| Expected Result | Organizations efficiently manage daily operations from a centralized interface. |
+
+---
+
+### FR-111 Organization Profile Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-111 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Organization Profile |
+| Description | Organizations shall manage their public and operational profile information. |
+| Functional Requirement | Organizations may update contact details, operating hours, supported services, emergency contacts, website links, geographical coverage, and branding assets. |
+| Expected Result | Platform information remains accurate and up to date. |
+
+---
+
+### FR-112 Branch Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-112 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Branch Management |
+| Description | Organizations with multiple branches shall manage each location independently. |
+| Functional Requirement | Branches shall maintain separate addresses, operating schedules, resource inventories, service availability, and staff assignments while remaining connected to the parent organization. |
+| Expected Result | Multi-location organizations operate efficiently under one unified account. |
+---
+
+### FR-113 Organization Team Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-113 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Team Management |
+| Description | Organizations shall manage internal team members responsible for platform operations. |
+| Functional Requirement | Authorized administrators shall invite, edit, deactivate, or remove organization members while assigning predefined access roles. |
+| Expected Result | Organizations maintain structured internal teams with controlled access. |
+
+---
+
+### FR-114 Organization Role-Based Access Control
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-114 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Role-Based Access Control |
+| Description | Internal users shall receive permissions according to their assigned organizational roles. |
+| Functional Requirement | Supported roles include Organization Owner, Administrator, Manager, Coordinator, Volunteer Supervisor, Staff Member, Viewer, Auditor, and future custom roles. |
+| Expected Result | Sensitive operations remain accessible only to authorized personnel. |
+
+---
+
+### FR-115 Organization Permission Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-115 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Permission Management |
+| Description | Organizations shall configure fine-grained permissions for internal users. |
+| Functional Requirement | Permissions shall control access to requests, volunteers, analytics, financial information, resources, reports, approvals, and administrative settings. |
+| Expected Result | Organizations maintain secure internal governance. |
+
+---
+
+### FR-116 Staff Invitation Workflow
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-116 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Staff Invitations |
+| Description | Administrators shall invite staff members through secure invitation workflows. |
+| Functional Requirement | Invitations may be delivered via email, SMS, or platform notifications with expiration policies. |
+| Expected Result | Staff onboarding becomes secure and efficient. |
+
+---
+
+### FR-117 Volunteer Assignment
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-117 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Volunteer Assignment |
+| Description | Organizations shall assign volunteers to specific activities, departments, or assistance requests. |
+| Functional Requirement | Assignments shall consider volunteer availability, skills, certifications, location, and workload. |
+| Expected Result | Volunteers are allocated efficiently to organizational activities. |
+
+---
+
+### FR-118 Resource Inventory Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-118 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Resource Inventory |
+| Description | Organizations shall manage inventories of physical and operational resources. |
+| Functional Requirement | Resources may include beds, ambulances, blood units, food supplies, medicines, rescue equipment, animal shelters, educational resources, volunteers, and future resource categories. |
+| Expected Result | Organizations maintain accurate resource visibility for operational planning. |
+
+---
+
+### FR-119 Resource Availability Tracking
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-119 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Resource Availability |
+| Description | Resource availability shall update dynamically based on operational activities. |
+| Functional Requirement | Availability shall support real-time updates, reservations, allocations, shortages, replenishment, and historical utilization. |
+| Expected Result | Resource allocation becomes faster and more reliable. |
+
+---
+
+### FR-120 Resource Request Approval
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-120 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Resource Approval Workflow |
+| Description | Organizations shall approve or reject internal resource requests through configurable approval workflows. |
+| Functional Requirement | Approval chains may include multiple organizational roles before resource allocation is finalized. |
+| Expected Result | Resource utilization follows organizational governance policies. |
+
+---
+
+### FR-121 Internal Organization Notifications
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-121 |
+| Priority | Medium |
+| Module | Organization & NGO Management |
+| Title | Internal Notifications |
+| Description | Internal users shall receive operational notifications relevant to their assigned responsibilities. |
+| Functional Requirement | Notifications include request assignments, volunteer updates, inventory alerts, verification events, emergency escalations, and approval requests. |
+| Expected Result | Internal coordination improves significantly. |
+
+---
+
+### FR-122 Organization Settings
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-122 |
+| Priority | Medium |
+| Module | Organization & NGO Management |
+| Title | Organization Settings |
+| Description | Organizations shall configure platform behavior according to operational requirements. |
+| Functional Requirement | Settings include notification preferences, working hours, emergency contacts, privacy controls, AI assistance preferences, branding, localization, and default operational workflows. |
+| Expected Result | Organizations customize the platform to fit their operational processes. |
+---
+
+### FR-123 Organization Performance Dashboard
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-123 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Performance Dashboard |
+| Description | Organizations shall access comprehensive dashboards displaying operational performance and social impact metrics. |
+| Functional Requirement | Dashboards shall include completed requests, response times, volunteer participation, resource utilization, beneficiary reach, pending cases, AI insights, and trend analysis. |
+| Expected Result | Organizations continuously monitor and improve operational efficiency. |
+
+---
+
+### FR-124 Organization Analytics
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-124 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Organization Analytics |
+| Description | Organizations shall receive advanced operational analytics. |
+| Functional Requirement | Analytics shall include request distribution, volunteer performance, resource consumption, geographical impact, seasonal trends, prediction reports, and KPI monitoring. |
+| Expected Result | Organizations make informed, data-driven operational decisions. |
+
+---
+
+### FR-125 AI Operational Insights
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-125 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | AI Operational Insights |
+| Description | AI shall generate recommendations that improve organizational efficiency and service delivery. |
+| Functional Requirement | Recommendations may include staffing optimization, volunteer allocation, resource balancing, service expansion opportunities, workload forecasting, and operational bottleneck detection. |
+| Expected Result | Organizations improve performance through explainable AI-assisted decision support. |
+
+---
+
+### FR-126 Compliance Monitoring
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-126 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Compliance Monitoring |
+| Description | Organizations shall continuously comply with platform governance and regulatory requirements. |
+| Functional Requirement | The platform shall monitor document validity, verification status, policy compliance, security standards, and mandatory reporting obligations. |
+| Expected Result | Organizations remain compliant throughout their platform lifecycle. |
+
+---
+
+### FR-127 License & Certificate Monitoring
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-127 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | License Monitoring |
+| Description | Organizations shall track licenses, certifications, and accreditation validity. |
+| Functional Requirement | Automatic reminders shall notify organizations before document expiration. |
+| Expected Result | Organizations maintain uninterrupted operational eligibility. |
+
+---
+
+### FR-128 Organization Suspension Workflow
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-128 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Suspension Management |
+| Description | Platform administrators shall suspend organizations violating policies or legal requirements. |
+| Functional Requirement | Suspended organizations shall lose operational privileges while preserving historical records for investigation and appeals. |
+| Expected Result | Platform integrity and user safety remain protected. |
+
+---
+
+### FR-129 Organization Reporting
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-129 |
+| Priority | High |
+| Module | Organization & NGO Management |
+| Title | Organization Reports |
+| Description | Organizations shall generate operational reports for internal management and external stakeholders. |
+| Functional Requirement | Reports shall support PDF, Excel, CSV, and scheduled exports covering operational, financial, volunteer, and impact metrics. |
+| Expected Result | Organizations efficiently communicate operational outcomes. |
+
+---
+
+### FR-130 Organization Audit Logging
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-130 |
+| Priority | Critical |
+| Module | Organization & NGO Management |
+| Title | Organization Audit Logs |
+| Description | All significant organizational activities shall be securely recorded. |
+| Functional Requirement | Audit logs shall capture administrative actions, profile changes, approvals, resource updates, volunteer assignments, compliance events, and security activities. |
+| Expected Result | Organizational activities remain fully traceable and auditable. |
+
+---
+
+## Organization Module Design Principles
+
+- Every organization shall undergo verification before accessing operational capabilities.
+- Organizational permissions shall follow the Principle of Least Privilege.
+- AI shall assist organizational decision-making while preserving human oversight.
+- Every critical organizational action shall be auditable.
+- Multi-branch organizations shall operate under unified governance while maintaining branch-level autonomy.
+- Compliance monitoring shall be proactive rather than reactive.
+- Platform architecture shall support organizations ranging from small NGOs to nationwide government agencies.
+- Organizational analytics shall prioritize measurable social impact alongside operational efficiency.
+- Future organizational categories shall integrate without requiring architectural redesign.
