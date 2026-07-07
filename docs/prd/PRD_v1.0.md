@@ -547,3 +547,388 @@ Authentication is the foundation of platform security and ensures that every sta
 | Exceptions | Logging service temporarily unavailable; events are queued for later storage. |
 | Success Criteria | Every security-critical authentication event is recorded and traceable. |
 | Dependencies | Authentication Service, Logging Service, Security Monitoring System |
+# FRM-02 User Profiles & Verification
+
+This module defines how every stakeholder within OmniLink AI creates, manages, verifies, and maintains their digital identity.
+
+Unlike traditional applications that support only a single user type, OmniLink AI serves a diverse ecosystem consisting of citizens, volunteers, mentors, students, NGOs, hospitals, doctors, corporate organizations, and government agencies. Each stakeholder has unique profile attributes, permissions, verification workflows, and AI-assisted capabilities.
+
+The platform shall maintain standardized profile structures while allowing stakeholder-specific extensions. Every verified profile contributes to the overall trustworthiness of the ecosystem and enables intelligent matching, personalized recommendations, explainable AI decisions, and secure collaboration.
+
+Profile information shall be managed according to privacy preferences, role-based permissions, and applicable data protection policies.
+
+The requirements defined below establish the foundation for identity management, profile verification, organizational credibility, and AI-powered trust mechanisms throughout the OmniLink AI platform.
+### FR-013 Citizen Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-013 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | Citizen Profile |
+| Description | The platform shall allow every registered citizen to maintain a comprehensive digital profile that enables participation in social coordination activities, AI recommendations, volunteering, mentorship, healthcare assistance, and community engagement. |
+| Actors | Citizen |
+| Preconditions | User has completed account registration. |
+| Trigger | User opens Profile Setup after authentication. |
+| Main Flow | 1. User enters personal details.<br>2. System validates required information.<br>3. User selects interests, skills, languages, and availability.<br>4. Profile is securely stored.<br>5. AI indexes profile for recommendation services. |
+| Alternative Flow | User skips optional fields and completes profile later. |
+| Exceptions | Invalid information or unsupported data formats. |
+| Success Criteria | Citizen profile is successfully created and available for platform services. |
+| Dependencies | Authentication Service, User Database, AI Recommendation Engine |
+### FR-014 Volunteer Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-014 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | Volunteer Profile |
+| Description | The platform shall allow volunteers to create specialized profiles containing experience, skills, certifications, interests, availability, preferred causes, and geographic service areas to enable intelligent volunteer matching. |
+| Actors | Volunteer |
+| Preconditions | User has an active citizen account. |
+| Trigger | User chooses to register as a volunteer. |
+| Main Flow | 1. User selects volunteer registration.<br>2. System collects volunteering information.<br>3. Certifications and optional documents are uploaded.<br>4. Availability preferences are configured.<br>5. Volunteer profile is published. |
+| Alternative Flow | Volunteer saves profile as draft before publishing. |
+| Exceptions | Invalid certification documents or incomplete mandatory information. |
+| Success Criteria | Volunteer profile becomes available for AI-powered opportunity matching. |
+| Dependencies | Authentication Service, Document Management System, AI Matching Engine |
+### FR-015 Mentor Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-015 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Mentor Profile |
+| Description | The platform shall support verified mentor profiles containing professional background, expertise, mentoring domains, educational qualifications, years of experience, preferred mentoring format, and availability. |
+| Actors | Mentor |
+| Preconditions | User has completed registration. |
+| Trigger | User applies to become a mentor. |
+| Main Flow | 1. User submits mentor application.<br>2. Professional information is collected.<br>3. Verification documents are uploaded.<br>4. Platform reviews mentor eligibility.<br>5. Approved mentor profile becomes publicly discoverable. |
+| Alternative Flow | Application remains under review until verification is complete. |
+| Exceptions | Verification failure or insufficient qualification evidence. |
+| Success Criteria | Verified mentor profile becomes available for mentorship recommendations. |
+| Dependencies | Authentication Service, Verification Service, Document Management System |
+### FR-016 Student Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-016 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Student Profile |
+| Description | The platform shall allow students to maintain academic profiles containing educational background, institution details, areas of study, career aspirations, skills, certifications, extracurricular activities, and learning interests to enable mentorship, internships, scholarships, volunteering, and skill development opportunities. |
+| Actors | Student |
+| Preconditions | User has completed account registration. |
+| Trigger | User selects "Student Profile" during onboarding or profile editing. |
+| Main Flow | 1. User enters academic information.<br>2. Educational institution is selected or added.<br>3. Skills, interests, certifications, and career goals are recorded.<br>4. AI indexes the profile for opportunity recommendations.<br>5. Student profile becomes available according to privacy settings. |
+| Alternative Flow | Student saves profile as draft and completes remaining sections later. |
+| Exceptions | Invalid educational information or unsupported document formats. |
+| Success Criteria | Student profile is successfully created and available for AI-powered educational recommendations. |
+| Dependencies | Authentication Service, User Database, AI Recommendation Engine |
+### FR-017 NGO Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-017 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | NGO Organization Profile |
+| Description | The platform shall support verified Non-Governmental Organization (NGO) profiles containing organizational information, legal registration details, mission, operating regions, focus areas, ongoing initiatives, volunteer requirements, contact information, and verification status. |
+| Actors | NGO Administrator |
+| Preconditions | Organization registration process has been initiated. |
+| Trigger | NGO administrator registers an organization. |
+| Main Flow | 1. Administrator submits organization details.<br>2. Legal registration documents are uploaded.<br>3. Organization mission, services, and operational regions are defined.<br>4. Verification workflow is initiated.<br>5. Verified organization profile becomes publicly discoverable. |
+| Alternative Flow | Organization profile remains in Pending Verification status until review is completed. |
+| Exceptions | Missing legal documents, duplicate organization registration, failed verification. |
+| Success Criteria | Verified NGO profile becomes eligible to create campaigns, recruit volunteers, and collaborate with other stakeholders. |
+| Dependencies | Authentication Service, Organization Verification Service, Document Management System |
+### FR-018 Hospital Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-018 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | Hospital Profile |
+| Description | The platform shall support verified hospital profiles containing healthcare services, emergency facilities, departments, specialties, available doctors, contact information, geographic location, operational hours, and emergency response capabilities. |
+| Actors | Hospital Administrator |
+| Preconditions | Hospital registration request has been initiated. |
+| Trigger | Hospital administrator registers the institution. |
+| Main Flow | 1. Administrator submits hospital information.<br>2. Medical licenses and accreditation documents are uploaded.<br>3. Departments, emergency services, and specialties are configured.<br>4. Verification process is completed.<br>5. Verified hospital profile becomes searchable across the platform. |
+| Alternative Flow | Hospital profile remains unpublished until verification is successfully completed. |
+| Exceptions | Invalid accreditation documents, duplicate hospital registration, verification failure. |
+| Success Criteria | Verified hospital profile becomes available for healthcare coordination, emergency assistance, AI recommendations, and patient referrals. |
+| Dependencies | Authentication Service, Healthcare Verification Service, Document Management System |
+### FR-019 Doctor Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-019 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | Doctor Profile |
+| Description | The platform shall support verified doctor profiles containing professional qualifications, medical registration details, specializations, years of experience, affiliated hospitals, consultation availability, languages spoken, emergency response capabilities, and telemedicine preferences. |
+| Actors | Doctor |
+| Preconditions | Doctor has successfully created an account and initiated professional verification. |
+| Trigger | Doctor selects "Register as Healthcare Professional". |
+| Main Flow | 1. Doctor enters personal and professional information.<br>2. Medical registration number and licenses are submitted.<br>3. Specializations and consultation preferences are configured.<br>4. Verification documents are uploaded.<br>5. Platform verifies credentials.<br>6. Verified doctor profile becomes searchable. |
+| Alternative Flow | Doctor profile remains under review until verification is completed. |
+| Exceptions | Invalid medical license, expired registration, duplicate healthcare profile, verification failure. |
+| Success Criteria | Verified doctor profile is available for healthcare assistance, emergency coordination, patient guidance, and AI recommendation services. |
+| Dependencies | Authentication Service, Healthcare Verification Service, Document Management System |
+### FR-020 Corporate Organization Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-020 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Corporate Organization Profile |
+| Description | The platform shall allow corporate organizations to create verified profiles supporting Corporate Social Responsibility (CSR), volunteering programs, donations, mentorship initiatives, employee engagement, sponsorships, and community partnerships. |
+| Actors | Corporate Administrator |
+| Preconditions | Corporate account registration has been initiated. |
+| Trigger | Organization registers on the platform. |
+| Main Flow | 1. Administrator enters company information.<br>2. Business registration documents are uploaded.<br>3. CSR interests, volunteering programs, donation preferences, and partnership opportunities are configured.<br>4. Verification workflow is completed.<br>5. Corporate profile becomes publicly available according to visibility settings. |
+| Alternative Flow | Organization saves profile as draft before submitting verification documents. |
+| Exceptions | Invalid registration documents, duplicate organization profile, verification failure. |
+| Success Criteria | Verified corporate profile can publish CSR initiatives, sponsor campaigns, recruit volunteers, and collaborate with NGOs and government agencies. |
+| Dependencies | Authentication Service, Organization Verification Service, Document Management System |
+### FR-021 Government Organization Profile
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-021 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | Government Organization Profile |
+| Description | The platform shall support verified government organization profiles for ministries, departments, municipalities, public agencies, disaster management authorities, educational institutions, and healthcare authorities to coordinate public services, welfare programs, emergency response, and community initiatives. |
+| Actors | Government Administrator |
+| Preconditions | Government department registration request has been initiated. |
+| Trigger | Government representative registers an official organization. |
+| Main Flow | 1. Administrator submits department information.<br>2. Official authorization documents are uploaded.<br>3. Jurisdiction, services, welfare schemes, and operational responsibilities are configured.<br>4. Platform verifies official credentials.<br>5. Verified government profile becomes available for collaboration and citizen services. |
+| Alternative Flow | Profile remains in Pending Verification status until official approval is completed. |
+| Exceptions | Invalid authorization documents, duplicate department registration, verification failure. |
+| Success Criteria | Verified government profile can publish welfare programs, emergency alerts, public announcements, and collaborate with all authorized stakeholders. |
+| Dependencies | Authentication Service, Government Verification Service, Document Management System |
+### FR-022 Profile Editing
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-022 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Profile Editing |
+| Description | The platform shall allow users and organizations to update their profile information while maintaining version history and preserving the integrity of verified information. |
+| Actors | All Registered Users, Organization Administrators |
+| Preconditions | User is authenticated and owns the profile. |
+| Trigger | User selects "Edit Profile". |
+| Main Flow | 1. User opens profile editor.<br>2. Existing information is displayed.<br>3. User updates editable fields.<br>4. System validates modifications.<br>5. Changes are saved.<br>6. Modified verified fields are marked for re-verification if required. |
+| Alternative Flow | User cancels editing before saving changes. |
+| Exceptions | Invalid data, unauthorized modification attempt, unsupported file format. |
+| Success Criteria | Updated profile information is securely stored while preserving verification integrity. |
+| Dependencies | User Database, Verification Service |
+### FR-023 Identity Verification
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-023 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | Identity Verification |
+| Description | The platform shall support identity verification for individual users to improve trust, reduce fraudulent accounts, and enhance AI recommendation reliability. |
+| Actors | Citizen, Volunteer, Mentor, Student, Doctor |
+| Preconditions | User account has been created. |
+| Trigger | User requests identity verification or verification is required for specific platform features. |
+| Main Flow | 1. User uploads identity documents.<br>2. System validates document quality.<br>3. Verification workflow begins.<br>4. Administrator or automated verification service reviews submission.<br>5. Verification status is updated. |
+| Alternative Flow | User resubmits documents if verification fails. |
+| Exceptions | Invalid identity documents, expired documents, duplicate identity detection. |
+| Success Criteria | Verified users receive identity verification status within the platform. |
+| Dependencies | Document Management Service, Verification Service |
+### FR-024 Organization Verification
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-024 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | Organization Verification |
+| Description | The platform shall verify organizations before allowing them to publish opportunities, manage volunteers, or provide community services. |
+| Actors | NGO Administrator, Hospital Administrator, Corporate Administrator, Government Administrator |
+| Preconditions | Organization profile has been created. |
+| Trigger | Organization submits verification request. |
+| Main Flow | 1. Organization uploads legal documents.<br>2. Platform validates submission.<br>3. Verification workflow begins.<br>4. Administrator reviews submitted information.<br>5. Organization status becomes Verified upon approval. |
+| Alternative Flow | Organization resubmits corrected documentation after rejection. |
+| Exceptions | Missing legal documents, duplicate registration, verification failure. |
+| Success Criteria | Verified organizations receive access to organization-specific platform capabilities. |
+| Dependencies | Verification Service, Document Management System |
+### FR-025 Verification Badges
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-025 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Verification Badges |
+| Description | The platform shall visually display verification badges for verified individuals and organizations to improve trust and transparency across the ecosystem. |
+| Actors | All Platform Users |
+| Preconditions | Verification process has been successfully completed. |
+| Trigger | Profile is displayed within the platform. |
+| Main Flow | 1. Verification status is retrieved.<br>2. Appropriate badge is assigned.<br>3. Badge is displayed on public profile and search results.<br>4. Badge status is automatically updated if verification expires or is revoked. |
+| Alternative Flow | Badge remains hidden while verification is pending. |
+| Exceptions | Verification revoked due to policy violations or expired credentials. |
+| Success Criteria | Users can easily distinguish verified and unverified stakeholders. |
+| Dependencies | Verification Service, User Profile Service |
+### FR-026 Trust Score
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-026 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Trust Score |
+| Description | The platform shall calculate and maintain a dynamic trust score for individuals and organizations based on verification status, participation history, successful contributions, community feedback, policy compliance, and platform engagement. |
+| Actors | All Verified Users and Organizations |
+| Preconditions | User or organization has completed at least one verified platform activity. |
+| Trigger | Completion of a platform activity or profile update. |
+| Main Flow | 1. Platform collects trust-related metrics.<br>2. AI evaluates contribution history.<br>3. Trust score is recalculated.<br>4. Updated score is displayed where appropriate. |
+| Alternative Flow | Newly registered users receive an initial baseline trust score until sufficient activity is available. |
+| Exceptions | Fraudulent activity detected or account suspended. |
+| Success Criteria | Trust score accurately reflects stakeholder credibility and reliability. |
+| Dependencies | AI Analytics Engine, Activity History Service |
+### FR-027 Document Management
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-027 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Secure Document Management |
+| Description | The platform shall securely manage uploaded documents including identity proofs, certifications, licenses, organization registrations, and verification evidence. |
+| Actors | All Registered Users and Organizations |
+| Preconditions | User has permission to upload documents. |
+| Trigger | User uploads or updates a document. |
+| Main Flow | 1. User uploads document.<br>2. System validates format and size.<br>3. Document is securely stored.<br>4. Verification workflow is initiated when applicable. |
+| Alternative Flow | User replaces outdated documents. |
+| Exceptions | Corrupted files, unsupported formats, storage failure. |
+| Success Criteria | Documents remain securely stored and accessible only to authorized stakeholders. |
+| Dependencies | Secure File Storage, Verification Service |
+### FR-028 Profile Visibility
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-028 |
+| Priority | Medium |
+| Module | User Profiles & Verification |
+| Title | Profile Visibility Management |
+| Description | Users and organizations shall control which profile information is publicly visible, shared only with verified stakeholders, or kept private. |
+| Actors | All Registered Users |
+| Preconditions | Profile exists. |
+| Trigger | User modifies privacy settings. |
+| Main Flow | 1. User selects visibility preferences.<br>2. System updates access permissions.<br>3. Public profile is regenerated based on visibility rules. |
+| Alternative Flow | Platform recommends privacy settings based on profile type. |
+| Exceptions | Restricted fields that must remain visible for verification purposes. |
+| Success Criteria | Profile visibility complies with user-defined privacy preferences and platform policies. |
+| Dependencies | Privacy Management Service |
+### FR-029 Privacy Preferences
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-029 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Privacy Preferences |
+| Description | The platform shall allow users to configure privacy preferences governing personal information, AI personalization, communication preferences, and data sharing. |
+| Actors | All Registered Users |
+| Preconditions | User is authenticated. |
+| Trigger | User opens Privacy Settings. |
+| Main Flow | 1. User selects privacy preferences.<br>2. Platform validates selections.<br>3. Updated privacy configuration is securely stored. |
+| Alternative Flow | Platform restores default privacy settings upon request. |
+| Exceptions | Platform-required information that cannot be hidden due to regulatory or security requirements. |
+| Success Criteria | User privacy preferences are consistently enforced throughout the platform. |
+| Dependencies | Privacy Management Service |
+### FR-030 Profile Completeness
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-030 |
+| Priority | Medium |
+| Module | User Profiles & Verification |
+| Title | Profile Completeness Score |
+| Description | The platform shall calculate a profile completeness score and recommend missing information that improves AI recommendations and platform functionality. |
+| Actors | All Registered Users |
+| Preconditions | User profile exists. |
+| Trigger | Profile creation or modification. |
+| Main Flow | 1. Platform evaluates profile fields.<br>2. Completeness percentage is calculated.<br>3. Missing information is identified.<br>4. Improvement recommendations are displayed. |
+| Alternative Flow | AI prioritizes recommendations based on profile type. |
+| Exceptions | Optional fields excluded from mandatory completeness calculations. |
+| Success Criteria | Users receive actionable guidance to improve profile quality. |
+| Dependencies | AI Recommendation Engine |
+### FR-031 AI Confidence Score
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-031 |
+| Priority | Medium |
+| Module | User Profiles & Verification |
+| Title | AI Confidence Score |
+| Description | The platform shall calculate an AI confidence score indicating the completeness, reliability, and suitability of user and organization profiles for AI-powered recommendations and intelligent matching. |
+| Actors | AI Recommendation Engine |
+| Preconditions | Profile exists and contains sufficient information for analysis. |
+| Trigger | Profile creation, profile update, verification completion, or AI model refresh. |
+| Main Flow | 1. AI evaluates profile quality.<br>2. Data completeness, verification status, historical activity, and trust metrics are analyzed.<br>3. Confidence score is calculated.<br>4. Score is stored for AI decision-making processes. |
+| Alternative Flow | Profiles with insufficient information receive a provisional confidence score. |
+| Exceptions | Missing profile information or unavailable AI evaluation service. |
+| Success Criteria | AI confidence score accurately reflects profile reliability for recommendation purposes. |
+| Dependencies | AI Recommendation Engine, Trust Score Service |
+### FR-032 Organization Membership Management
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-032 |
+| Priority | High |
+| Module | User Profiles & Verification |
+| Title | Organization Membership Management |
+| Description | The platform shall allow users to join, leave, or manage memberships with organizations such as NGOs, hospitals, educational institutions, corporate partners, and government departments according to organization-specific approval policies. |
+| Actors | Users, Organization Administrators |
+| Preconditions | Organization profile exists. |
+| Trigger | User submits membership request or administrator invites a user. |
+| Main Flow | 1. Membership request is submitted.<br>2. Organization reviews request.<br>3. Membership is approved or rejected.<br>4. User receives notification.<br>5. Membership records are updated. |
+| Alternative Flow | Organization automatically approves membership based on predefined rules. |
+| Exceptions | Organization suspended, duplicate membership, insufficient permissions. |
+| Success Criteria | Membership relationships are accurately maintained across the platform. |
+| Dependencies | Organization Management Service, Notification Service |
+### FR-033 Account Linking
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-033 |
+| Priority | Medium |
+| Module | User Profiles & Verification |
+| Title | Account Linking |
+| Description | The platform shall allow users to link multiple authorized identities, organizational memberships, and external authentication providers while maintaining a unified profile. |
+| Actors | Registered Users |
+| Preconditions | User account exists. |
+| Trigger | User requests account linking. |
+| Main Flow | 1. User selects account linking option.<br>2. System verifies ownership.<br>3. Linked accounts are associated.<br>4. Unified profile is updated. |
+| Alternative Flow | User removes previously linked accounts. |
+| Exceptions | Duplicate identity detected, ownership verification failure. |
+| Success Criteria | Linked accounts operate through a single authenticated identity without data duplication. |
+| Dependencies | Authentication Service, Identity Management Service |
+### FR-034 Profile Audit Logging
+
+| Field | Description |
+|--------|-------------|
+| Requirement ID | FR-034 |
+| Priority | Critical |
+| Module | User Profiles & Verification |
+| Title | Profile Audit Logging |
+| Description | The platform shall maintain immutable audit logs for profile creation, modifications, verification activities, organization membership changes, and administrative actions affecting user profiles. |
+| Actors | Platform, Security Administrator |
+| Preconditions | Profile-related event occurs. |
+| Trigger | Profile creation, update, verification, membership modification, administrator action. |
+| Main Flow | 1. Platform captures event details.<br>2. Timestamp, user, action, and affected entity are recorded.<br>3. Audit logs are securely stored.<br>4. Authorized administrators may review logs for compliance and security investigations. |
+| Alternative Flow | Logs are exported for compliance reporting. |
+| Exceptions | Logging service temporarily unavailable; events are queued until service recovery. |
+| Success Criteria | Every profile-related action is securely recorded and traceable. |
+| Dependencies | Audit Logging Service, Security Monitoring Service |
