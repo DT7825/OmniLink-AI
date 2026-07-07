@@ -5753,3 +5753,460 @@ The Payment, Donations & Financial Management module shall support future enhanc
 - Regulatory compliance shall be configurable across jurisdictions.
 - Financial infrastructure shall scale to millions of transactions.
 - Future financial technologies shall integrate without requiring architectural redesign.
+# FRM-14 Reporting, Dashboard & Business Intelligence
+
+## Module Overview
+
+The Reporting, Dashboard & Business Intelligence module provides comprehensive operational visibility across OmniLink AI. It enables real-time dashboards, executive reporting, KPI monitoring, analytical insights, customizable visualizations, scheduled reporting, and AI-powered business intelligence to support informed decision-making.
+
+The module consolidates information from all platform components into unified dashboards that improve operational awareness, organizational transparency, strategic planning, and humanitarian impact measurement.
+
+---
+
+## Business Purpose
+
+Humanitarian organizations require accurate operational intelligence to monitor performance, allocate resources, evaluate outcomes, and improve service delivery.
+
+This module provides:
+
+- Executive dashboards
+- Operational reporting
+- KPI monitoring
+- Real-time analytics
+- Custom dashboards
+- Scheduled reporting
+- Report exports
+- Business intelligence
+- AI-generated insights
+- Performance scorecards
+
+---
+
+### FR-339 Executive Dashboard
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-339 |
+| Priority | Critical |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Executive Dashboard |
+| Description | Executive users shall access organization-wide operational dashboards. |
+| Functional Requirement | Dashboards shall display KPIs, operational summaries, AI insights, financial performance, healthcare coordination, volunteer activity, emergency response metrics, and configurable widgets. |
+| Expected Result | Leadership gains a real-time overview of organizational performance. |
+
+---
+
+### FR-340 Operational Reports
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-340 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Operational Reports |
+| Description | The platform shall generate operational reports across all modules. |
+| Functional Requirement | Reports shall summarize activities, incidents, resource utilization, organizational performance, volunteer engagement, healthcare coordination, government services, and communication statistics. |
+| Expected Result | Organizations monitor operational effectiveness through standardized reporting. |
+
+---
+
+### FR-341 KPI Monitoring
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-341 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | KPI Monitoring |
+| Description | Key Performance Indicators shall be continuously monitored. |
+| Functional Requirement | KPI dashboards shall support configurable metrics, thresholds, trend indicators, alerts, benchmarking, and historical comparisons. |
+| Expected Result | Organizations track strategic objectives through measurable performance indicators. |
+
+---
+
+### FR-342 Real-Time Dashboards
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-342 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Real-Time Dashboards |
+| Description | Operational dashboards shall update using real-time platform events. |
+| Functional Requirement | Dashboards shall refresh automatically using streaming data where available and display live operational metrics, emergency activity, communication status, and system health indicators. |
+| Expected Result | Users maintain situational awareness through continuously updated dashboards. |
+
+---
+
+### FR-343 Dashboard Customization
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-343 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Dashboard Customization |
+| Description | Users shall customize dashboard layouts according to their responsibilities. |
+| Functional Requirement | Customization shall support widget selection, layout management, filters, saved views, role-based defaults, and configurable themes. |
+| Expected Result | Dashboards remain relevant to individual operational roles. |
+
+---
+
+### FR-344 Report Export
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-344 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Report Export |
+| Description | Reports shall be exportable in multiple formats. |
+| Functional Requirement | Export options shall support PDF, Excel, CSV, and printable reports while preserving formatting, charts, and tables where applicable. |
+| Expected Result | Organizations easily share operational reports with stakeholders. |
+---
+
+### FR-345 Scheduled Reports
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-345 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Scheduled Reports |
+| Description | The platform shall automatically generate reports according to configurable schedules. |
+| Functional Requirement | Scheduled reporting shall support daily, weekly, monthly, quarterly, annual, and custom schedules, automated delivery, recipient groups, report templates, and configurable retention policies. |
+| Expected Result | Stakeholders receive operational reports automatically without manual effort. |
+
+---
+
+### FR-346 Interactive Analytics
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-346 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Interactive Analytics |
+| Description | Users shall interactively explore operational data. |
+| Functional Requirement | Analytics shall support filtering, drill-down, drill-through, pivoting, comparison views, dynamic queries, and cross-module analysis. |
+| Expected Result | Users investigate operational trends and answer business questions efficiently. |
+
+---
+
+### FR-347 Performance Scorecards
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-347 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Performance Scorecards |
+| Description | Organizations shall evaluate operational performance using standardized scorecards. |
+| Functional Requirement | Scorecards shall include KPIs, target values, achievement percentages, trend indicators, benchmarking, departmental performance, and historical comparisons. |
+| Expected Result | Organizational performance is measured consistently across all operational areas. |
+
+---
+
+### FR-348 Geographic Visualization
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-348 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Geographic Visualization |
+| Description | Operational data shall be visualized geographically where location information is available. |
+| Functional Requirement | Geographic dashboards shall display maps, heatmaps, resource locations, emergency incidents, volunteer distribution, healthcare facilities, and configurable geographic overlays. |
+| Expected Result | Decision-makers understand operational activity across geographic regions. |
+
+---
+
+### FR-349 Data Visualization Library
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-349 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Data Visualization Library |
+| Description | Dashboards shall support multiple visualization types. |
+| Functional Requirement | Visualization components shall include bar charts, line charts, pie charts, area charts, scatter plots, gauges, heatmaps, tables, timelines, and configurable custom widgets. |
+| Expected Result | Operational information is presented using appropriate visual formats. |
+
+---
+
+### FR-350 Cross-Module Reporting
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-350 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Cross-Module Reporting |
+| Description | Reports shall combine information from multiple platform modules. |
+| Functional Requirement | Cross-module reporting shall correlate assistance requests, volunteers, hospitals, government services, communications, donations, AI recommendations, and organizational performance into unified reports. |
+| Expected Result | Leadership receives comprehensive operational intelligence rather than isolated module reports. |
+
+---
+
+### FR-351 Report Templates
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-351 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Report Templates |
+| Description | Reports shall be generated using reusable templates. |
+| Functional Requirement | Templates shall support branding, configurable layouts, dynamic sections, multilingual content, approval workflows, and version management. |
+| Expected Result | Reporting remains standardized and professionally presented. |
+
+---
+
+### FR-352 Dashboard Sharing
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-352 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Dashboard Sharing |
+| Description | Authorized users shall securely share dashboards with other users. |
+| Functional Requirement | Dashboard sharing shall support view permissions, edit permissions, expiration policies, public/private sharing, and organizational access controls. |
+| Expected Result | Teams collaborate using shared operational dashboards while maintaining security. |
+
+---
+
+### FR-353 Report Scheduling Notifications
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-353 |
+| Priority | Low |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Report Scheduling Notifications |
+| Description | Users shall receive notifications regarding scheduled report generation and delivery. |
+| Functional Requirement | Notifications shall include successful generation, delivery failures, scheduling changes, expired reports, and configurable reminder settings. |
+| Expected Result | Users remain informed about automated reporting activities. |
+---
+
+### FR-354 AI-Generated Insights
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-354 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | AI-Generated Insights |
+| Description | AI shall generate operational insights from platform data. |
+| Functional Requirement | AI shall identify trends, anomalies, opportunities, risks, resource bottlenecks, performance improvements, and strategic recommendations using configurable analytical models. |
+| Expected Result | Decision-makers receive actionable insights beyond traditional reporting. |
+
+---
+
+### FR-355 Business Intelligence Dashboard
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-355 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Business Intelligence Dashboard |
+| Description | The platform shall provide centralized business intelligence dashboards. |
+| Functional Requirement | BI dashboards shall consolidate operational, financial, healthcare, volunteer, government, AI, and communication metrics into executive-level analytical views. |
+| Expected Result | Leadership accesses comprehensive business intelligence across the entire platform. |
+
+---
+
+### FR-356 Predictive Analytics
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-356 |
+| Priority | High |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Predictive Analytics |
+| Description | AI shall forecast future operational trends using historical data. |
+| Functional Requirement | Predictive models shall estimate demand, volunteer availability, healthcare utilization, donation trends, emergency response requirements, and organizational performance. |
+| Expected Result | Organizations proactively prepare for future operational needs. |
+
+---
+
+### FR-357 Operational Benchmarking
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-357 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Operational Benchmarking |
+| Description | Organizations shall compare performance against internal and configurable benchmark values. |
+| Functional Requirement | Benchmarking shall support departmental comparisons, historical performance, configurable targets, and organizational scorecards while respecting privacy controls. |
+| Expected Result | Organizations identify strengths and opportunities for improvement. |
+
+---
+
+### FR-358 Data Quality Dashboard
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-358 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Data Quality Dashboard |
+| Description | Administrators shall monitor the quality of operational data. |
+| Functional Requirement | Dashboards shall display completeness, consistency, duplication, validation failures, missing values, timeliness, and data quality trends. |
+| Expected Result | Organizations maintain reliable reporting through high-quality data. |
+
+---
+
+### FR-359 Dashboard Performance Monitoring
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-359 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Dashboard Performance Monitoring |
+| Description | Dashboard services shall be continuously monitored. |
+| Functional Requirement | Monitoring shall track dashboard loading times, query performance, rendering latency, refresh intervals, cache utilization, and system health metrics. |
+| Expected Result | Dashboards remain responsive and reliable under varying workloads. |
+
+---
+
+### FR-360 Report Version Management
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-360 |
+| Priority | Low |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Report Version Management |
+| Description | Report definitions shall support controlled version management. |
+| Functional Requirement | Version management shall record template revisions, approval history, change tracking, rollback capability, and publication status. |
+| Expected Result | Report evolution remains traceable and professionally managed. |
+
+---
+
+### FR-361 Report Distribution
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-361 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Report Distribution |
+| Description | Reports shall be securely distributed to authorized recipients. |
+| Functional Requirement | Distribution shall support email delivery, downloadable reports, shared dashboards, secure links, organizational groups, and configurable access permissions. |
+| Expected Result | Stakeholders receive reports securely through appropriate distribution channels. |
+
+---
+
+### FR-362 Executive Briefings
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-362 |
+| Priority | Medium |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Executive Briefings |
+| Description | The platform shall automatically generate executive briefing summaries. |
+| Functional Requirement | Briefings shall summarize major KPIs, operational achievements, emerging risks, financial highlights, AI recommendations, and strategic priorities using configurable schedules. |
+| Expected Result | Executives receive concise, high-value operational summaries for decision-making. |
+---
+
+## Business Rules
+
+### BR-RPT-001 Single Source of Truth
+All reports and dashboards shall use approved operational data sources to ensure consistency across the platform.
+
+### BR-RPT-002 Role-Based Visibility
+Users shall only access reports, dashboards, KPIs, and analytics for which they are authorized.
+
+### BR-RPT-003 Reporting Accuracy
+Operational reports shall accurately reflect the underlying transactional data at the time of report generation.
+
+### BR-RPT-004 Executive Transparency
+Executive dashboards shall present critical organizational information using standardized KPIs and visualization principles.
+
+### BR-RPT-005 AI-Assisted Decision Support
+AI-generated insights shall support decision-making but shall not replace authorized human judgment.
+
+### BR-RPT-006 Data Retention
+Reports and analytical outputs shall follow configurable organizational retention and archival policies.
+
+---
+
+## Security Considerations
+
+### FR-363 Reporting Data Protection
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-363 |
+| Priority | Critical |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Reporting Data Protection |
+| Description | Reporting data shall remain protected throughout its lifecycle. |
+| Functional Requirement | Dashboards, reports, analytical datasets, cached results, exported files, and visualization metadata shall be protected using encryption, secure storage, access control, and secure transmission mechanisms. |
+| Expected Result | Reporting information remains confidential and protected from unauthorized access. |
+
+---
+
+### FR-364 Reporting Audit Logging
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-364 |
+| Priority | Critical |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Reporting Audit Logging |
+| Description | Significant reporting activities shall be permanently recorded. |
+| Functional Requirement | Audit logs shall record dashboard access, report generation, exports, scheduling changes, template modifications, administrative actions, BI configuration changes, and sharing activities. |
+| Expected Result | Complete reporting traceability supports governance, compliance, and investigations. |
+
+---
+
+### FR-365 Reporting Governance Compliance
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-365 |
+| Priority | Critical |
+| Module | Reporting, Dashboard & Business Intelligence |
+| Title | Reporting Governance Compliance |
+| Description | Reporting services shall comply with organizational governance and regulatory requirements. |
+| Functional Requirement | Governance controls shall support approval workflows, retention policies, audit requirements, report certification, compliance reporting, and configurable organizational policies. |
+| Expected Result | Reporting services remain compliant with governance and regulatory obligations. |
+
+---
+
+## Future Expansion Strategy
+
+The Reporting, Dashboard & Business Intelligence module shall support future enhancements including:
+
+- Natural language report generation
+- Conversational business intelligence
+- AI-generated executive presentations
+- Digital twin operational dashboards
+- Predictive strategic planning
+- Real-time global humanitarian intelligence
+- Immersive 3D operational visualization
+- Cross-organization benchmarking
+- Automated KPI optimization
+- Self-service analytics
+- Embedded analytics APIs
+- Autonomous reporting assistants
+
+---
+
+## Module Design Principles
+
+- Reports shall prioritize accuracy, consistency, and clarity.
+- Dashboards shall present actionable operational intelligence rather than raw data.
+- Business intelligence shall remain explainable and transparent.
+- Reporting services shall scale to enterprise-level workloads.
+- Report generation shall remain modular and configurable.
+- All analytical outputs shall remain fully auditable.
+- Security and privacy shall govern every reporting workflow.
+- Future analytical capabilities shall integrate without requiring architectural redesign.
