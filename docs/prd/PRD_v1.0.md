@@ -1272,3 +1272,339 @@ The requirements defined below establish the foundation for identity management,
 | Functional Requirement | Audit records shall include timestamps, actor identity, performed action, previous value, new value, and originating device or IP where applicable. |
 | Expected Result | Complete traceability is maintained for security, compliance, and analytics. |
 | Dependencies | Audit Logging Service |
+## FRM-04 AI Recommendation & Matching Engine
+### FR-059 AI Recommendation Engine
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-059 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | AI Recommendation Engine |
+| Description | The platform shall provide an AI-powered recommendation engine that identifies the most suitable responders for every assistance request. |
+| Actors | AI Engine, Citizens, Volunteers, NGOs, Hospitals, Government Agencies |
+| Preconditions | Assistance request exists and eligible responders are available. |
+| Trigger | New request creation or request update. |
+| Functional Requirement | The AI engine shall evaluate multiple ranking factors and generate personalized responder recommendations. |
+| Expected Result | Ranked responder list is generated automatically. |
+| Dependencies | User Profiles, Request Management, AI Services |
+
+---
+
+### FR-060 Multi-Factor Matching
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-060 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Multi-Factor Matching |
+| Description | AI shall consider multiple attributes before recommending responders. |
+| Functional Requirement | Matching shall consider expertise, location, urgency, language, verification status, historical success rate, workload, availability, trust score, response time, organization capacity, accessibility, and category specialization. |
+| Expected Result | Recommendations are generated using weighted scoring instead of single-factor filtering. |
+
+---
+
+### FR-061 Recommendation Score
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-061 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Recommendation Score |
+| Description | Every recommendation shall include a numerical suitability score. |
+| Functional Requirement | AI shall calculate recommendation confidence on a scale of 0–100 based on multiple matching factors. |
+| Expected Result | Responders are ranked from highest to lowest suitability. |
+
+---
+
+### FR-062 Explainable AI
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-062 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Explainable Recommendations |
+| Description | Users shall understand why responders were recommended. |
+| Functional Requirement | The platform shall display key recommendation factors including expertise match, proximity, availability, trust score, and previous experience. |
+| Expected Result | Recommendations remain transparent and understandable. |
+
+---
+
+### FR-063 Confidence Score
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-063 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Confidence Score |
+| Description | AI shall estimate confidence for every recommendation. |
+| Functional Requirement | Confidence shall reflect prediction certainty rather than responder quality. |
+| Expected Result | Users understand AI reliability before making decisions. |
+
+---
+
+### FR-064 Personalized Recommendations
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-064 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Personalized Recommendations |
+| Description | AI shall personalize recommendations according to user preferences and historical interactions. |
+| Functional Requirement | The recommendation engine shall continuously learn from accepted assignments, completed requests, and user feedback. |
+| Expected Result | Recommendation quality improves over time. |
+
+---
+
+### FR-065 Skill-Based Matching
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-065 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Skill-Based Matching |
+| Description | AI shall prioritize responders whose registered skills closely match request requirements. |
+| Functional Requirement | Skill matching shall use structured profiles and AI semantic similarity models. |
+| Expected Result | Responders possess relevant competencies before assignment. |
+
+---
+
+### FR-066 Geographic Matching
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-066 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Geographic Matching |
+| Description | AI shall consider travel distance and service coverage while generating recommendations. |
+| Functional Requirement | Geographic proximity shall be balanced with expertise and urgency. |
+| Expected Result | Nearby qualified responders receive higher ranking where appropriate. |
+
+---
+
+### FR-067 Availability Prediction
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-067 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Availability Prediction |
+| Description | AI shall estimate responder availability before assignment. |
+| Functional Requirement | Availability shall consider current workload, response history, active assignments, and schedule preferences. |
+| Expected Result | Busy responders receive lower recommendation priority. |
+
+---
+
+### FR-068 Volunteer Ranking
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-068 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Volunteer Ranking |
+| Description | Volunteers shall be ranked using AI-generated performance scores. |
+| Functional Requirement | Ranking shall consider successful completions, ratings, response speed, consistency, and verification status. |
+| Expected Result | Higher-performing volunteers appear earlier in recommendations. |
+
+---
+
+### FR-069 Organization Ranking
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-069 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Organization Ranking |
+| Description | NGOs, hospitals, and institutions shall receive AI-generated ranking scores. |
+| Functional Requirement | Ranking shall consider specialization, historical outcomes, service capacity, and response efficiency. |
+| Expected Result | Organizations are recommended according to demonstrated capability. |
+
+---
+
+### FR-070 Recommendation History
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-070 |
+| Priority | Medium |
+| Module | AI Recommendation & Matching Engine |
+| Title | Recommendation History |
+| Description | The platform shall maintain historical recommendation records. |
+| Functional Requirement | Historical recommendations shall support analytics, auditing, and continuous model improvement. |
+| Expected Result | AI decisions remain traceable over time. |
+### FR-071 Hospital Recommendation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-071 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Hospital Recommendation |
+| Description | AI shall recommend the most appropriate hospitals for healthcare-related requests. |
+| Functional Requirement | Recommendations shall consider specialization, emergency capability, bed availability (where available), geographic proximity, historical response performance, and service capacity. |
+| Expected Result | Healthcare requests are routed to the most suitable hospitals. |
+
+---
+
+### FR-072 Government Department Recommendation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-072 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Government Department Recommendation |
+| Description | AI shall identify the appropriate government authority responsible for resolving a public-service request. |
+| Functional Requirement | Recommendations shall use request category, jurisdiction, department responsibility mapping, and historical resolution data. |
+| Expected Result | Requests reach the correct government department with minimal manual intervention. |
+
+---
+
+### FR-073 Mentor Recommendation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-073 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Mentor Recommendation |
+| Description | AI shall recommend mentors for students and learners seeking educational guidance. |
+| Functional Requirement | Matching shall consider expertise, experience, language, educational background, availability, interests, and previous mentoring outcomes. |
+| Expected Result | Students receive highly relevant mentor recommendations. |
+
+---
+
+### FR-074 Blood Donor Recommendation
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-074 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Blood Donor Recommendation |
+| Description | AI shall identify suitable blood donors during emergency requests. |
+| Functional Requirement | Recommendations shall consider blood group compatibility, donation eligibility, geographic proximity, availability, and donor consent preferences. |
+| Expected Result | Eligible donors are prioritized for emergency notification. |
+
+---
+
+### FR-075 Resource Optimization
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-075 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Resource Optimization |
+| Description | AI shall optimize responder allocation across multiple active requests. |
+| Functional Requirement | Optimization shall minimize overload while maximizing response quality and overall social impact. |
+| Expected Result | Resources are distributed efficiently across the platform. |
+
+---
+
+### FR-076 Fairness Monitoring
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-076 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Fairness Monitoring |
+| Description | AI recommendations shall be continuously monitored for fairness. |
+| Functional Requirement | The platform shall detect potential unfair treatment caused by biased ranking patterns across user groups or organizations. |
+| Expected Result | Recommendation fairness is continuously evaluated. |
+
+---
+
+### FR-077 Bias Detection
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-077 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Bias Detection |
+| Description | AI shall automatically identify abnormal recommendation bias. |
+| Functional Requirement | Statistical monitoring shall detect systematic favoritism or exclusion affecting recommendations. |
+| Expected Result | Suspicious recommendation behavior is flagged for review. |
+
+---
+
+### FR-078 Human Override
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-078 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Human Override |
+| Description | Authorized personnel shall override AI recommendations whenever necessary. |
+| Functional Requirement | Manual assignments shall always take precedence over AI-generated recommendations while recording justification. |
+| Expected Result | Human decision-makers retain final authority. |
+
+---
+
+### FR-079 Feedback Learning
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-079 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Feedback Learning |
+| Description | AI shall continuously improve using historical outcomes and user feedback. |
+| Functional Requirement | Completed requests, ratings, responder performance, and assignment success shall contribute to future model improvement. |
+| Expected Result | Recommendation accuracy increases over time. |
+
+---
+
+### FR-080 Model Performance Monitoring
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-080 |
+| Priority | High |
+| Module | AI Recommendation & Matching Engine |
+| Title | Model Performance Monitoring |
+| Description | AI model quality shall be continuously evaluated. |
+| Functional Requirement | Accuracy, precision, recall, response time, recommendation acceptance rate, and user satisfaction shall be monitored through operational dashboards. |
+| Expected Result | AI quality remains measurable and continuously optimized. |
+
+---
+
+### FR-081 Recommendation Analytics
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-081 |
+| Priority | Medium |
+| Module | AI Recommendation & Matching Engine |
+| Title | Recommendation Analytics |
+| Description | Administrators shall access analytics related to recommendation performance. |
+| Functional Requirement | Dashboards shall display recommendation acceptance rates, assignment efficiency, response improvements, confidence distributions, and model trends. |
+| Expected Result | AI performance becomes transparent for administrators and stakeholders. |
+
+---
+
+### FR-082 Recommendation Audit Logging
+
+| Field | Description |
+|---------|-------------|
+| Requirement ID | FR-082 |
+| Priority | Critical |
+| Module | AI Recommendation & Matching Engine |
+| Title | Recommendation Audit Logging |
+| Description | Every recommendation generated by AI shall be securely logged for traceability and compliance. |
+| Functional Requirement | Audit records shall include model version, recommendation timestamp, confidence score, selected ranking factors, user who accepted or rejected the recommendation, and final outcome. |
+| Expected Result | Complete recommendation history supports auditing, debugging, governance, and future model evaluation. |
+| Dependencies | AI Services, Audit Logging Service |
