@@ -123,3 +123,99 @@ OmniLink AI serves a diverse ecosystem of stakeholders, each playing a unique ro
 - AI recommendations assist stakeholders but never replace human decision-making in critical situations.
 - Trust, transparency, privacy, and accountability are fundamental principles governing all stakeholder interactions.
 - Collaboration between stakeholders is prioritized over isolated workflows to maximize measurable social impact.
+## 6. User Personas
+
+To ensure that OmniLink AI is designed around real user needs rather than assumptions, the platform defines representative user personas covering the primary stakeholders of the ecosystem. These personas guide product design, user experience, AI workflows, and feature prioritization.
+
+---
+
+### Persona 1 — Citizen Seeking Assistance
+
+| Attribute | Details |
+|-----------|----------|
+| Persona ID | PER-001 |
+| Role | Citizen / Individual |
+| Primary Goal | Receive timely, reliable, and appropriate assistance. |
+| Typical Needs | Healthcare guidance, blood donation, mentorship, elderly support, government schemes, animal rescue assistance. |
+| Pain Points | Doesn't know where to seek help, fragmented services, delayed responses, lack of trust. |
+| AI Interaction | AI recommends the most suitable organizations, volunteers, services, and government schemes based on the request. |
+| Success Metric | Receives verified assistance quickly with minimal effort. |
+
+---
+
+### Persona 2 — Volunteer
+
+| Attribute | Details |
+|-----------|----------|
+| Persona ID | PER-002 |
+| Role | Community Volunteer |
+| Primary Goal | Help people efficiently using available time and skills. |
+| Typical Needs | Nearby requests, verified cases, scheduling flexibility. |
+| Pain Points | Difficulty discovering genuine opportunities and coordinating with organizations. |
+| AI Interaction | AI recommends nearby, high-impact requests based on availability, skills, and location. |
+| Success Metric | Maximum number of successful volunteer engagements with positive community impact. |
+
+---
+
+### Persona 3 — NGO Coordinator
+
+| Attribute | Details |
+|-----------|----------|
+| Persona ID | PER-003 |
+| Role | NGO Operations Manager |
+| Primary Goal | Coordinate volunteers, manage cases, and maximize social impact. |
+| Typical Needs | Resource allocation, volunteer management, analytics, reporting. |
+| Pain Points | Manual coordination, fragmented communication, limited operational visibility. |
+| AI Interaction | AI prioritizes cases, predicts resource requirements, and recommends operational actions. |
+| Success Metric | Faster response times, improved case resolution, and measurable community outcomes. |
+
+---
+
+### Persona 4 — Healthcare Professional
+
+| Attribute | Details |
+|-----------|----------|
+| Persona ID | PER-004 |
+| Role | Doctor / Hospital Representative |
+| Primary Goal | Deliver timely healthcare support and emergency coordination. |
+| Typical Needs | Emergency requests, patient coordination, verified medical information. |
+| Pain Points | Communication delays and inefficient case routing. |
+| AI Interaction | AI prioritizes urgent healthcare requests and recommends appropriate routing. |
+| Success Metric | Reduced response time and improved healthcare accessibility. |
+
+---
+
+### Persona 5 — Mentor / Educator
+
+| Attribute | Details |
+|-----------|----------|
+| Persona ID | PER-005 |
+| Role | Mentor / Teacher / Career Guide |
+| Primary Goal | Support students through mentorship and skill development. |
+| Typical Needs | Suitable mentees, scheduling, progress tracking. |
+| Pain Points | Difficulty identifying students who genuinely require guidance. |
+| AI Interaction | AI intelligently matches mentors and students based on goals, interests, and expertise. |
+| Success Metric | Successful mentorship relationships and measurable student progress. |
+
+---
+
+### Persona 6 — Platform Administrator
+
+| Attribute | Details |
+|-----------|----------|
+| Persona ID | PER-006 |
+| Role | System Administrator |
+| Primary Goal | Maintain platform reliability, security, transparency, and operational efficiency. |
+| Typical Needs | User verification, moderation, analytics, audit logs, AI monitoring. |
+| Pain Points | Fraud detection, misuse prevention, operational oversight. |
+| AI Interaction | AI assists with anomaly detection, fraud alerts, moderation support, and system insights. |
+| Success Metric | Secure, trusted, scalable, and reliable platform operations. |
+
+---
+
+### Persona Design Principles
+
+- Every feature developed for OmniLink AI must provide measurable value to at least one defined user persona.
+- AI functionality must augment human decision-making while maintaining transparency and accountability.
+- Accessibility, inclusivity, and ease of use remain fundamental design principles for every persona.
+- Future platform features shall extend existing personas before introducing entirely new stakeholder categories.
