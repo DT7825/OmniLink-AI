@@ -1,43 +1,59 @@
 # OmniLink AI
 
-# Product Requirements Document (PRD)
+## Product Requirements Document (PRD)
 
 ---
 
-## Document Information
+### Document Information
 
 | Field | Value |
 |-------|-------|
-| Document Name | Product Requirements Document |
+| Project Name | OmniLink AI |
+| Document | Product Requirements Document (PRD) |
 | Version | v1.0 |
 | Status | Draft |
-| Project | OmniLink AI |
-| Product Category | AI-Powered Social Coordination Platform |
-| Owner | Project Team |
-| Prepared By | PT IPDT & ChatGPT |
 | Repository | OmniLink-AI |
+| Prepared By | PT IPDT & ChatGPT |
 | Last Updated | 07 July 2026 |
-| Review Status | Pending |
-| Classification | Internal |
+| Document Type | Product Engineering |
+| Confidentiality | Internal |
 
 ---
 
-# Table of Contents
+## Executive Summary
 
-1. Executive Summary
-2. Vision
-3. Mission
-4. Problem Statement
-5. Objectives
-6. Stakeholders
-7. User Personas
-8. Product Scope
-9. Functional Requirements
-10. Non-Functional Requirements
-11. AI Requirements
-12. ML Requirements
+OmniLink AI is an AI-powered social coordination platform designed to intelligently connect individuals, volunteers, non-governmental organizations (NGOs), hospitals, educational institutions, corporations, and government organizations into a unified digital ecosystem.
+
+Today, social support systems operate in isolation. People often struggle to identify the right organization, volunteer, mentor, healthcare provider, blood donor, or government welfare scheme at the right time. This fragmentation increases response time, duplicates effort, and reduces the overall impact of social initiatives.
+
+OmniLink AI addresses this challenge by serving as an intelligent coordination platform that connects people in need with verified individuals and organizations capable of providing timely assistance.
+
+The platform leverages Artificial Intelligence (AI), Machine Learning (ML), and Retrieval-Augmented Generation (RAG) to improve decision-making, recommend the most suitable responders, prioritize urgent cases, and provide contextual insights while ensuring that final decisions remain under human supervision.
+
+The first version (MVP) focuses on building a scalable, secure, explainable, and startup-ready platform capable of demonstrating measurable social impact across multiple domains, including mentorship, blood donation, elderly care, healthcare guidance, volunteer management, animal welfare, disaster response, and government welfare accessibility.
+
+OmniLink AI is designed not only as a hackathon project but also as the foundation for a future nationwide social coordination platform capable of supporting governments, NGOs, healthcare providers, educational institutions, CSR initiatives, and community organizations through intelligent digital infrastructure.
+
+---
+
+## Table of Contents
+
+1. Vision Statement
+2. Mission Statement
+3. Problem Statement
+4. Product Objectives
+5. Stakeholders
+6. User Personas
+7. Product Scope
+8. Functional Requirements
+9. Non-Functional Requirements
+10. AI Requirements
+11. Machine Learning Requirements
+12. RAG Requirements
 13. System Constraints
 14. MVP Scope
 15. Success Metrics
-16. Risks
+16. Risks and Assumptions
 17. Future Roadmap
+
+---
