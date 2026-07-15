@@ -1,19 +1,25 @@
 import {
   Body,
   Controller,
+  Get,
   HttpCode,
   HttpStatus,
   Post,
+  Req,
+  UseGuards,
 } from '@nestjs/common';
 import {
+  ApiBearerAuth,
   ApiOperation,
   ApiResponse,
   ApiTags,
 } from '@nestjs/swagger';
 
+
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
+import { JwtAuthGuard } from './jwt/jwt-auth.guard';
 
 @ApiTags('Authentication')
 @Controller('auth')
@@ -26,10 +32,6 @@ export class AuthController {
     status: 201,
     description: 'User registered successfully',
   })
-  @ApiResponse({
-    status: 409,
-    description: 'Email already exists',
-  })
   register(@Body() registerDto: RegisterDto) {
     return this.authService.register(registerDto);
   }
@@ -41,13 +43,18 @@ export class AuthController {
     status: 200,
     description: 'Login successful',
   })
-  @ApiResponse({
-    status: 401,
-    description: 'Invalid credentials',
-  })
   login(@Body() loginDto: LoginDto) {
     return this.authService.login(loginDto);
   }
+
+  @Get('me')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Get current logged-in user' })
+  getProfile(@Req() req: any) {
+    return req.user;
 }
+}
+
 
 
