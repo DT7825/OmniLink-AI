@@ -32,6 +32,7 @@ model User {
   refreshTokens      RefreshToken[]
   sessions           UserSession[]
   verificationTokens VerificationToken[]
+  citizenProfile CitizenProfile?
 }
 
 model UserSession {
@@ -105,4 +106,24 @@ enum UserStatus {
 enum VerificationType {
   EMAIL
   PASSWORD_RESET
+}
+model CitizenProfile {
+  id               String   @id @default(cuid())
+
+  userId           String   @unique
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  gender           String?
+  dateOfBirth      DateTime?
+  bloodGroup       String?
+
+  address          String
+  city             String
+  state            String
+  pinCode          String
+
+  emergencyContact String?
+
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 }

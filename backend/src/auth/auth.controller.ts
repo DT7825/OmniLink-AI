@@ -1,3 +1,5 @@
+import { RolesGuard } from './guards/roles.guard';
+import { Roles } from './decorators/roles.decorator';
 import {
   Body,
   Controller,
@@ -48,7 +50,8 @@ export class AuthController {
   }
 
   @Get('me')
-  @UseGuards(JwtAuthGuard)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Get current logged-in user' })
   getProfile(@Req() req: any) {
