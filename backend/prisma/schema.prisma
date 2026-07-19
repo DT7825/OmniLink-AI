@@ -32,7 +32,10 @@ model User {
   refreshTokens      RefreshToken[]
   sessions           UserSession[]
   verificationTokens VerificationToken[]
-  citizenProfile CitizenProfile?
+  citizenProfile     CitizenProfile?
+  volunteerProfile   VolunteerProfile?
+  ngoProfile         NGOProfile?
+  donorProfile       DonorProfile?
 }
 
 model UserSession {
@@ -107,23 +110,83 @@ enum VerificationType {
   EMAIL
   PASSWORD_RESET
 }
+
 model CitizenProfile {
-  id               String   @id @default(cuid())
+  id String @id @default(cuid())
 
-  userId           String   @unique
-  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  gender           String?
-  dateOfBirth      DateTime?
-  bloodGroup       String?
+  gender      String?
+  dateOfBirth DateTime?
+  bloodGroup  String?
 
-  address          String
-  city             String
-  state            String
-  pinCode          String
+  address String
+  city    String
+  state   String
+  pinCode String
 
   emergencyContact String?
 
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VolunteerProfile {
+  id String @id @default(cuid())
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  skills       String[]
+  availability String?
+  experience   String?
+  occupation   String?
+  organization String?
+
+  isVerified Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model NGOProfile {
+  id String @id @default(cuid())
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  ngoName        String
+  registrationNo String?
+  website        String?
+  description    String?
+
+  address String
+  city    String
+  state   String
+  pinCode String
+
+  isVerified Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DonorProfile {
+  id String @id @default(cuid())
+
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  bloodGroup       String
+  isAvailable      Boolean   @default(true)
+  lastDonationDate DateTime?
+
+  address String
+  city    String
+  state   String
+  pinCode String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

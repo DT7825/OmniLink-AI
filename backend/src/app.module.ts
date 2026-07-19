@@ -1,3 +1,4 @@
+import { VolunteerModule } from './volunteer/volunteer.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
@@ -15,6 +16,7 @@ import { CitizenModule } from './citizen/citizen.module';
     UsersModule,
     AuthModule,
     CitizenModule,
+    VolunteerModule,
   ],
   controllers: [AppController],
   providers: [AppService],
