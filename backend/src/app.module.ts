@@ -7,6 +7,7 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CitizenModule } from './citizen/citizen.module';
 import { NgoModule } from './ngo/ngo.module';
+import { DonorModule } from './donor/donor.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { NgoModule } from './ngo/ngo.module';
     CitizenModule,
     VolunteerModule,
     NgoModule,
+    DonorModule,
   ],
   controllers: [AppController],
   providers: [AppService],
