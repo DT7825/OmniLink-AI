@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CitizenModule } from './citizen/citizen.module';
+import { NgoModule } from './ngo/ngo.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { CitizenModule } from './citizen/citizen.module';
     AuthModule,
     CitizenModule,
     VolunteerModule,
+    NgoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
