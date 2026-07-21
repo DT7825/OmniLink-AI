@@ -36,6 +36,7 @@ model User {
   volunteerProfile   VolunteerProfile?
   ngoProfile         NGOProfile?
   donorProfile       DonorProfile?
+  emergencyRequests  EmergencyRequest[]
 }
 
 model UserSession {
@@ -109,6 +110,33 @@ enum UserStatus {
 enum VerificationType {
   EMAIL
   PASSWORD_RESET
+}
+
+enum EmergencyCategory {
+  MEDICAL
+  FIRE
+  ACCIDENT
+  BLOOD
+  ANIMAL_RESCUE
+  NATURAL_DISASTER
+  FOOD
+  SHELTER
+  OTHER
+}
+
+enum EmergencyPriority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum EmergencyStatus {
+  OPEN
+  ASSIGNED
+  IN_PROGRESS
+  RESOLVED
+  CANCELLED
 }
 
 model CitizenProfile {
@@ -189,4 +217,44 @@ model DonorProfile {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model EmergencyRequest {
+  id String @id @default(cuid())
+
+  title       String
+  description String
+
+  category EmergencyCategory
+  priority EmergencyPriority @default(MEDIUM)
+  status   EmergencyStatus   @default(OPEN)
+
+  address String
+  city    String
+  state   String
+  pinCode String
+
+  latitude  Float?
+  longitude Float?
+
+  contactName  String
+  contactPhone String
+
+  peopleAffected Int @default(1)
+
+  requiresMedicalAid     Boolean @default(false)
+  requiresBlood          Boolean @default(false)
+  requiresFood           Boolean @default(false)
+  requiresShelter        Boolean @default(false)
+  requiresTransportation Boolean @default(false)
+
+  createdById String
+  createdBy   User   @relation(fields: [createdById], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([createdById])
+  @@index([status])
+  @@index([category])
 }

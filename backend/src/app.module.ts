@@ -1,3 +1,4 @@
+import { EmergencyModule } from './emergency/emergency.module';
 import { VolunteerModule } from './volunteer/volunteer.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
@@ -21,6 +22,7 @@ import { DonorModule } from './donor/donor.module';
     VolunteerModule,
     NgoModule,
     DonorModule,
+    EmergencyModule,
   ],
   controllers: [AppController],
   providers: [AppService],
