@@ -8,35 +8,36 @@ datasource db {
 }
 
 model User {
-  id                 String              @id @default(cuid())
-  fullName           String
-  email              String              @unique
-  passwordHash       String
-  phone              String?
-  profileImage       String?
-  role               UserRole            @default(CITIZEN)
-  status             UserStatus          @default(PENDING)
-  isVerified         Boolean             @default(false)
-  createdAt          DateTime            @default(now())
-  updatedAt          DateTime            @updatedAt
-  deletedAt          DateTime?
-  address            String?
-  bio                String?
-  city               String?
-  country            String?
-  latitude           Float?
-  longitude          Float?
-  pincode            String?
-  state              String?
-  auditLogs          AuditLog[]
-  refreshTokens      RefreshToken[]
-  sessions           UserSession[]
-  verificationTokens VerificationToken[]
-  citizenProfile     CitizenProfile?
-  volunteerProfile   VolunteerProfile?
-  ngoProfile         NGOProfile?
-  donorProfile       DonorProfile?
-  emergencyRequests  EmergencyRequest[]
+  id                   String              @id @default(cuid())
+  fullName             String
+  email                String              @unique
+  passwordHash         String
+  phone                String?
+  profileImage         String?
+  role                 UserRole            @default(CITIZEN)
+  status               UserStatus          @default(PENDING)
+  isVerified           Boolean             @default(false)
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+  deletedAt            DateTime?
+  address              String?
+  bio                  String?
+  city                 String?
+  country              String?
+  latitude             Float?
+  longitude            Float?
+  pincode              String?
+  state                String?
+  auditLogs            AuditLog[]
+  refreshTokens        RefreshToken[]
+  sessions             UserSession[]
+  verificationTokens   VerificationToken[]
+  citizenProfile       CitizenProfile?
+  volunteerProfile     VolunteerProfile?
+  ngoProfile           NGOProfile?
+  donorProfile         DonorProfile?
+  emergencyRequests    EmergencyRequest[]  @relation("CreatedEmergencies")
+  volunteerAssignments EmergencyRequest[]  @relation("VolunteerAssignments")
 }
 
 model UserSession {
@@ -249,12 +250,21 @@ model EmergencyRequest {
   requiresTransportation Boolean @default(false)
 
   createdById String
-  createdBy   User   @relation(fields: [createdById], references: [id], onDelete: Cascade)
+
+  createdBy User @relation(name: "CreatedEmergencies", fields: [createdById], references: [id], onDelete: Cascade)
+
+  assignedVolunteerId String?
+
+  assignedVolunteer User? @relation(name: "VolunteerAssignments", fields: [assignedVolunteerId], references: [id])
+
+  assignedAt DateTime?
+  resolvedAt DateTime?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   @@index([createdById])
+  @@index([assignedVolunteerId])
   @@index([status])
   @@index([category])
 }
