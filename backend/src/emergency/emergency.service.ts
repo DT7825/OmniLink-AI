@@ -7,6 +7,7 @@ import { PrismaService } from '../prisma/prisma.service';
 import { CreateEmergencyDto } from './dto/create-emergency.dto';
 import { UpdateEmergencyDto } from './dto/update-emergency.dto';
 import { AssignVolunteerDto } from './dto/assign-volunteer.dto';
+import { AssignNgoDto } from './dto/assign-ngo.dto';
 
 @Injectable()
 export class EmergencyService {
@@ -159,4 +160,66 @@ async getAssignedVolunteer(emergencyId: string) {
 
   return emergency.assignedVolunteer;
 }
+async assignNgo(emergencyId: string, dto: AssignNgoDto) {
+  const emergency = await this.prisma.emergencyRequest.findUnique({
+    where: { id: emergencyId },
+  });
+
+  if (!emergency) {
+    throw new NotFoundException('Emergency request not found');
+  }
+
+  const ngo = await this.prisma.user.findUnique({
+    where: { id: dto.ngoId },
+  });
+
+  if (!ngo || ngo.role !== 'NGO') {
+    throw new NotFoundException('NGO not found');
+  }
+
+  return this.prisma.emergencyRequest.update({
+    where: { id: emergencyId },
+    data: {
+      assignedNgoId: dto.ngoId,
+      assignedNgoAt: new Date(),
+      status: 'ASSIGNED',
+    },
+    include: {
+      assignedNgo: true,
+    },
+  });
 }
+
+async removeNgo(emergencyId: string) {
+  const emergency = await this.prisma.emergencyRequest.findUnique({
+    where: { id: emergencyId },
+  });
+
+  if (!emergency) {
+    throw new NotFoundException('Emergency request not found');
+  }
+
+  return this.prisma.emergencyRequest.update({
+    where: { id: emergencyId },
+    data: {
+      assignedNgoId: null,
+      assignedNgoAt: null,
+    },
+  });
+}
+
+async getAssignedNgo(emergencyId: string) {
+  const emergency = await this.prisma.emergencyRequest.findUnique({
+    where: { id: emergencyId },
+    include: {
+      assignedNgo: true,
+    },
+  });
+
+  if (!emergency) {
+    throw new NotFoundException('Emergency request not found');
+  }
+
+  return emergency.assignedNgo;
+}
+} 

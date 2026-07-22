@@ -38,6 +38,7 @@ model User {
   donorProfile         DonorProfile?
   emergencyRequests    EmergencyRequest[]  @relation("CreatedEmergencies")
   volunteerAssignments EmergencyRequest[]  @relation("VolunteerAssignments")
+  ngoAssignments       EmergencyRequest[]  @relation("NgoAssignments")
 }
 
 model UserSession {
@@ -256,6 +257,12 @@ model EmergencyRequest {
   assignedVolunteerId String?
 
   assignedVolunteer User? @relation(name: "VolunteerAssignments", fields: [assignedVolunteerId], references: [id])
+
+  assignedNgoId String?
+
+  assignedNgo User? @relation(name: "NgoAssignments", fields: [assignedNgoId], references: [id])
+
+  assignedNgoAt DateTime?
 
   assignedAt DateTime?
   resolvedAt DateTime?

@@ -16,6 +16,7 @@ import { EmergencyService } from './emergency.service';
 import { CreateEmergencyDto } from './dto/create-emergency.dto';
 import { UpdateEmergencyDto } from './dto/update-emergency.dto';
 import { AssignVolunteerDto } from './dto/assign-volunteer.dto';
+import { AssignNgoDto } from './dto/assign-ngo.dto';
 
 @ApiTags('Emergency')
 @ApiBearerAuth()
@@ -102,5 +103,32 @@ getAssignedVolunteer(
   @Param('id') id: string,
 ) {
   return this.emergencyService.getAssignedVolunteer(id);
+}
+@Post(':id/assign-ngo')
+@ApiOperation({ summary: 'Assign NGO to Emergency' })
+  @Post(':id/assign-ngo')
+assignNgo(
+  @Param('id') id: string,
+  @Body() dto: AssignNgoDto,
+) {
+  console.log('ASSIGN NGO CONTROLLER HIT');
+
+  return this.emergencyService.assignNgo(id, dto);
+}
+
+@Patch(':id/remove-ngo')
+@ApiOperation({ summary: 'Remove Assigned NGO' })
+removeNgo(
+  @Param('id') id: string,
+) {
+  return this.emergencyService.removeNgo(id);
+}
+
+@Get(':id/ngo')
+@ApiOperation({ summary: 'Get Assigned NGO' })
+getAssignedNgo(
+  @Param('id') id: string,
+) {
+  return this.emergencyService.getAssignedNgo(id);
 }
 }
