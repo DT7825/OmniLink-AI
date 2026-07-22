@@ -15,6 +15,7 @@ import { JwtAuthGuard } from '../auth/jwt/jwt-auth.guard';
 import { EmergencyService } from './emergency.service';
 import { CreateEmergencyDto } from './dto/create-emergency.dto';
 import { UpdateEmergencyDto } from './dto/update-emergency.dto';
+import { AssignVolunteerDto } from './dto/assign-volunteer.dto';
 
 @ApiTags('Emergency')
 @ApiBearerAuth()
@@ -78,4 +79,28 @@ export class EmergencyController {
       req.user.userId,
     );
   }
+  @Post(':id/assign-volunteer')
+@ApiOperation({ summary: 'Assign Volunteer to Emergency' })
+assignVolunteer(
+  @Param('id') id: string,
+  @Body() dto: AssignVolunteerDto,
+) {
+  return this.emergencyService.assignVolunteer(id, dto);
+}
+
+@Patch(':id/remove-volunteer')
+@ApiOperation({ summary: 'Remove Assigned Volunteer' })
+removeVolunteer(
+  @Param('id') id: string,
+) {
+  return this.emergencyService.removeVolunteer(id);
+}
+
+@Get(':id/volunteer')
+@ApiOperation({ summary: 'Get Assigned Volunteer' })
+getAssignedVolunteer(
+  @Param('id') id: string,
+) {
+  return this.emergencyService.getAssignedVolunteer(id);
+}
 }

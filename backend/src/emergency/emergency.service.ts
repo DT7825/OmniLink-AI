@@ -6,6 +6,7 @@ import {
 import { PrismaService } from '../prisma/prisma.service';
 import { CreateEmergencyDto } from './dto/create-emergency.dto';
 import { UpdateEmergencyDto } from './dto/update-emergency.dto';
+import { AssignVolunteerDto } from './dto/assign-volunteer.dto';
 
 @Injectable()
 export class EmergencyService {
@@ -92,4 +93,70 @@ export class EmergencyService {
       message: 'Emergency request deleted successfully',
     };
   }
+  async assignVolunteer(
+  emergencyId: string,
+  dto: AssignVolunteerDto,
+) {
+  const emergency = await this.prisma.emergencyRequest.findUnique({
+    where: { id: emergencyId },
+  });
+
+  if (!emergency) {
+    throw new NotFoundException('Emergency request not found');
+  }
+
+  const volunteer = await this.prisma.user.findUnique({
+    where: { id: dto.volunteerId },
+  });
+
+  if (!volunteer) {
+    throw new NotFoundException('Volunteer not found');
+  }
+
+  return this.prisma.emergencyRequest.update({
+    where: { id: emergencyId },
+    data: {
+      assignedVolunteerId: dto.volunteerId,
+      assignedAt: new Date(),
+      status: 'ASSIGNED',
+    },
+    include: {
+      assignedVolunteer: true,
+    },
+  });
+}
+
+async removeVolunteer(emergencyId: string) {
+  const emergency = await this.prisma.emergencyRequest.findUnique({
+    where: { id: emergencyId },
+  });
+
+  if (!emergency) {
+    throw new NotFoundException('Emergency request not found');
+  }
+
+  return this.prisma.emergencyRequest.update({
+    where: { id: emergencyId },
+    data: {
+      assignedVolunteerId: null,
+      assignedAt: null,
+      status: 'OPEN',
+    },
+  });
+}
+
+async getAssignedVolunteer(emergencyId: string) {
+  const emergency = await this.prisma.emergencyRequest.findUnique({
+    where: { id: emergencyId },
+    include: {
+      assignedVolunteer: true,
+    },
+  });
+
+  if (!emergency) {
+    throw new NotFoundException('Emergency request not found');
+  }
+
+  return emergency.assignedVolunteer;
+}
 }
