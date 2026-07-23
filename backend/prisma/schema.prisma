@@ -8,37 +8,39 @@ datasource db {
 }
 
 model User {
-  id                   String              @id @default(cuid())
-  fullName             String
-  email                String              @unique
-  passwordHash         String
-  phone                String?
-  profileImage         String?
-  role                 UserRole            @default(CITIZEN)
-  status               UserStatus          @default(PENDING)
-  isVerified           Boolean             @default(false)
-  createdAt            DateTime            @default(now())
-  updatedAt            DateTime            @updatedAt
-  deletedAt            DateTime?
-  address              String?
-  bio                  String?
-  city                 String?
-  country              String?
-  latitude             Float?
-  longitude            Float?
-  pincode              String?
-  state                String?
-  auditLogs            AuditLog[]
-  refreshTokens        RefreshToken[]
-  sessions             UserSession[]
-  verificationTokens   VerificationToken[]
-  citizenProfile       CitizenProfile?
-  volunteerProfile     VolunteerProfile?
-  ngoProfile           NGOProfile?
-  donorProfile         DonorProfile?
-  emergencyRequests    EmergencyRequest[]  @relation("CreatedEmergencies")
-  volunteerAssignments EmergencyRequest[]  @relation("VolunteerAssignments")
-  ngoAssignments       EmergencyRequest[]  @relation("NgoAssignments")
+  id                    String              @id @default(cuid())
+  fullName              String
+  email                 String              @unique
+  passwordHash          String
+  phone                 String?
+  profileImage          String?
+  role                  UserRole            @default(CITIZEN)
+  status                UserStatus          @default(PENDING)
+  isVerified            Boolean             @default(false)
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+  deletedAt             DateTime?
+  address               String?
+  bio                   String?
+  city                  String?
+  country               String?
+  latitude              Float?
+  longitude             Float?
+  pincode               String?
+  state                 String?
+  auditLogs             AuditLog[]
+  refreshTokens         RefreshToken[]
+  sessions              UserSession[]
+  verificationTokens    VerificationToken[]
+  citizenProfile        CitizenProfile?
+  volunteerProfile      VolunteerProfile?
+  ngoProfile            NGOProfile?
+  donorProfile          DonorProfile?
+  emergencyRequests     EmergencyRequest[]  @relation("CreatedEmergencies")
+  volunteerAssignments  EmergencyRequest[]  @relation("VolunteerAssignments")
+  ngoAssignments        EmergencyRequest[]  @relation("NgoAssignments")
+  notificationsReceived Notification[]      @relation("NotificationReceiver")
+  notificationsSent     Notification[]      @relation("NotificationSender")
 }
 
 model UserSession {
@@ -139,6 +141,22 @@ enum EmergencyStatus {
   IN_PROGRESS
   RESOLVED
   CANCELLED
+}
+
+enum NotificationType {
+  EMERGENCY
+  VOLUNTEER
+  NGO
+  DONATION
+  BLOOD_REQUEST
+  SYSTEM
+}
+
+enum NotificationPriority {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
 }
 
 model CitizenProfile {
@@ -270,8 +288,41 @@ model EmergencyRequest {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  notifications Notification[]
+
   @@index([createdById])
   @@index([assignedVolunteerId])
   @@index([status])
   @@index([category])
+}
+
+model Notification {
+  id String @id @default(cuid())
+
+  title   String
+  message String
+
+  type     NotificationType
+  priority NotificationPriority @default(MEDIUM)
+
+  isRead Boolean @default(false)
+
+  receiverId String
+  receiver   User   @relation("NotificationReceiver", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  senderId String?
+  sender   User?   @relation("NotificationSender", fields: [senderId], references: [id])
+
+  emergencyId String?
+  emergency   EmergencyRequest? @relation(fields: [emergencyId], references: [id])
+  actionUrl   String?
+  metadata    Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([receiverId])
+  @@index([senderId])
+  @@index([isRead])
+  @@index([type])
 }

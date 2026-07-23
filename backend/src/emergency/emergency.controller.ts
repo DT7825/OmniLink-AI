@@ -106,7 +106,7 @@ getAssignedVolunteer(
 }
 @Post(':id/assign-ngo')
 @ApiOperation({ summary: 'Assign NGO to Emergency' })
-  @Post(':id/assign-ngo')
+  
 assignNgo(
   @Param('id') id: string,
   @Body() dto: AssignNgoDto,

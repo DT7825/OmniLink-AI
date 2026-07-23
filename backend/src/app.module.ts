@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { CitizenModule } from './citizen/citizen.module';
 import { NgoModule } from './ngo/ngo.module';
 import { DonorModule } from './donor/donor.module';
+import { NotificationModule } from './notification/notification.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { DonorModule } from './donor/donor.module';
     NgoModule,
     DonorModule,
     EmergencyModule,
+    NotificationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
